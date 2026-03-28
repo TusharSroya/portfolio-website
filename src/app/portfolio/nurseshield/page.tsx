@@ -12,28 +12,32 @@ export default function NurseShieldPage() {
   return (
     <main className="min-h-screen bg-background text-accent-cream flex flex-col">
       {/* Navigation */}
-      <nav className="w-full px-6 py-6 md:px-8 md:py-8 flex justify-between items-center z-10 max-w-7xl mx-auto border-b border-sage/10 relative gap-4">
-        <div className="flex items-center gap-4 md:gap-6">
+      <nav className="w-full px-6 py-6 md:px-8 md:py-8 flex flex-col md:flex-row justify-between items-center z-10 max-w-7xl mx-auto border-b border-sage/10 relative gap-6 md:gap-4 text-center md:text-left">
+        <div className="flex flex-col sm:flex-row items-center gap-4 md:gap-6">
           <Link
             href="/"
             className="group flex items-center gap-2 text-[10px] md:text-sm tracking-widest uppercase font-medium text-sage hover:text-accent-cream transition-colors whitespace-nowrap"
           >
             <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
-            <span className="hidden xs:inline">Back to Home</span>
-            <span className="xs:hidden">Home</span>
+            <span>Back to Home</span>
           </Link>
           <a
             href="https://nurseshield.lovable.app/auth"
             target="_blank"
             rel="noopener noreferrer"
-            className="hidden sm:flex items-center gap-2 text-[10px] tracking-[0.2em] uppercase font-bold text-accent-cream bg-sage/20 px-4 py-2 rounded-full border border-sage/30 hover:bg-sage/30 transition-all"
+            className="flex items-center gap-2 text-[10px] tracking-[0.2em] uppercase font-bold text-accent-cream bg-sage/20 px-4 py-2 rounded-full border border-sage/30 hover:bg-sage/30 transition-all scale-90 sm:scale-100"
           >
             <span className="w-1.5 h-1.5 bg-green-400 rounded-full animate-pulse" />
             View Live App
           </a>
         </div>
-        <div className="flex">
-          <PortfolioTabs />
+        <div className="flex scale-90 sm:scale-100 origin-center md:origin-right">
+          <div className="md:hidden">
+            <PortfolioTabs forceShowLabels={true} />
+          </div>
+          <div className="hidden md:block">
+            <PortfolioTabs forceShowLabels={false} />
+          </div>
         </div>
       </nav>
 

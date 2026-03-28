@@ -19,21 +19,56 @@ export const AnimatedBackground = () => {
 
     const mouse = { x: -1000, y: -1000 };
     const targetMouse = { x: -1000, y: -1000 };
+    let lastScrollY = window.scrollY;
+    let isMobile = false;
+
+    const checkMobile = () => {
+      isMobile = window.matchMedia("(max-width: 768px)").matches;
+    };
+    checkMobile();
 
     const handleMouseMove = (e: MouseEvent) => {
+      if (isMobile) return;
       const rect = canvasRef.current?.getBoundingClientRect();
       if (!rect) return;
       targetMouse.x = e.clientX - rect.left;
       targetMouse.y = e.clientY - rect.top;
     };
 
+    const handleTouchMove = (e: TouchEvent) => {
+      const rect = canvasRef.current?.getBoundingClientRect();
+      if (!rect || !e.touches[0]) return;
+      targetMouse.x = e.touches[0].clientX - rect.left;
+      targetMouse.y = e.touches[0].clientY - rect.top;
+    };
+
+    const handleScroll = () => {
+      if (!isMobile) return;
+      const rect = canvasRef.current?.getBoundingClientRect();
+      if (!rect) return;
+      
+      // On mobile, scroll causes a horizontal ripple sweep
+      const scrollY = window.scrollY;
+      const scrollDelta = scrollY - lastScrollY;
+      lastScrollY = scrollY;
+
+      // Position the "virtual cursor" at 40% of viewport height, 
+      // oscillating horizontally based on scroll depth
+      targetMouse.y = window.innerHeight * 0.4;
+      targetMouse.x = (width / 2) + Math.sin(scrollY * 0.005) * (width * 0.4);
+    };
+
     const handleMouseLeave = () => {
+      if (isMobile) return;
       targetMouse.x = -1000;
       targetMouse.y = -1000;
     };
 
     window.addEventListener("mousemove", handleMouseMove);
     window.addEventListener("mouseout", handleMouseLeave);
+    window.addEventListener("touchmove", handleTouchMove, { passive: true });
+    window.addEventListener("touchstart", handleTouchMove, { passive: true });
+    window.addEventListener("scroll", handleScroll, { passive: true });
 
     const handleResize = () => {
       const parent = canvasRef.current?.parentElement;
@@ -42,6 +77,7 @@ export const AnimatedBackground = () => {
       height = parent.clientHeight;
       canvas.width = width;
       canvas.height = height;
+      checkMobile();
     };
     window.addEventListener("resize", handleResize);
 
@@ -53,8 +89,15 @@ export const AnimatedBackground = () => {
     const draw = () => {
       time -= 0.01;
 
-      mouse.x += (targetMouse.x - mouse.x) * 0.15;
-      mouse.y += (targetMouse.y - mouse.y) * 0.15;
+      // Autonomous drift on mobile if not interacting
+      if (isMobile && targetMouse.x === -1000) {
+        // Natural wandering orbit
+        mouse.x = (width / 2) + Math.sin(time * 0.5) * (width * 0.3);
+        mouse.y = (height / 2) + Math.cos(time * 0.3) * (height * 0.2);
+      } else {
+        mouse.x += (targetMouse.x - mouse.x) * 0.15;
+        mouse.y += (targetMouse.y - mouse.y) * 0.15;
+      }
 
       ctx.clearRect(0, 0, width, height);
       // Extremely subtle, complementing cream/sage blend that won't distract from text

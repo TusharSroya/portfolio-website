@@ -4,7 +4,7 @@ import { useRouter, usePathname } from "next/navigation";
 import { ExpandableTabs } from "./ExpandableTabs";
 import { Wrench, FolderGit2, Mail, Home, FileText, User } from "lucide-react";
 
-export function HomeTabs() {
+export function HomeTabs({ forceShowLabels = false }: { forceShowLabels?: boolean }) {
   const router = useRouter();
   const pathname = usePathname();
 
@@ -16,10 +16,9 @@ export function HomeTabs() {
   const navTabs = [
     { title: "About", icon: User },
     { type: "separator" },
-    { title: "Capabilities", icon: Wrench },
+    { title: forceShowLabels ? "Tools" : "Capabilities", icon: Wrench },
     { type: "separator" },
-    { 
-      title: "My Work", 
+    { title: forceShowLabels ? "Work" : "My Work", 
       icon: FolderGit2,
       dropdown: [
         { title: "ValGenesis Escalations", href: "/portfolio/valgenesis" },
@@ -28,9 +27,9 @@ export function HomeTabs() {
       ]
     },
     { type: "separator" },
-    { title: "Resume", icon: FileText },
+    { title: forceShowLabels ? "CV" : "Resume", icon: FileText },
     { type: "separator" },
-    { title: "Contact", icon: Mail },
+    { title: forceShowLabels ? "Mail" : "Contact", icon: Mail },
   ] as any;
 
   return (
@@ -38,6 +37,7 @@ export function HomeTabs() {
       tabs={navTabs} 
       activeTab={activeTab}
       activeColor="text-sage" 
+      forceShowLabels={forceShowLabels}
       className="border-sage/20 bg-background/50 backdrop-blur-md"
       onChange={(index) => {
         if (index !== null && links[index]) {
@@ -48,7 +48,7 @@ export function HomeTabs() {
   );
 }
 
-export function PortfolioTabs() {
+export function PortfolioTabs({ forceShowLabels = false }: { forceShowLabels?: boolean }) {
   const router = useRouter();
   const pathname = usePathname();
 
@@ -63,10 +63,10 @@ export function PortfolioTabs() {
     { type: "separator" },
     { title: "About", icon: User },
     { type: "separator" },
-    { title: "Capabilities", icon: Wrench },
+    { title: forceShowLabels ? "Tools" : "Capabilities", icon: Wrench },
     { type: "separator" },
     { 
-      title: "My Work", 
+      title: forceShowLabels ? "Work" : "My Work", 
       icon: FolderGit2,
       dropdown: [
         { title: "ValGenesis Escalations", href: "/portfolio/valgenesis" },
@@ -75,9 +75,9 @@ export function PortfolioTabs() {
       ]
     },
     { type: "separator" },
-    { title: "Resume", icon: FileText },
+    { title: forceShowLabels ? "CV" : "Resume", icon: FileText },
     { type: "separator" },
-    { title: "Contact", icon: Mail },
+    { title: forceShowLabels ? "Mail" : "Contact", icon: Mail },
   ] as any;
 
   return (
@@ -85,6 +85,7 @@ export function PortfolioTabs() {
       tabs={navTabs} 
       activeTab={activeTab}
       activeColor="text-sage" 
+      forceShowLabels={forceShowLabels}
       className="border-sage/20 bg-background/50 backdrop-blur-md"
       onChange={(index) => {
         if (index !== null && links[index]) {

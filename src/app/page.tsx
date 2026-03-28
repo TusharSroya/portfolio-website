@@ -14,12 +14,18 @@ export default function Home() {
       {/* HERO WRAPPER - Encapsulates the top section */}
       <div className="relative w-full min-h-screen flex flex-col">
         {/* Navigation - Solid background ensures it stays visually separated from the pattern */}
-        <nav className="w-full px-6 py-6 md:px-8 md:py-8 flex justify-between items-center z-20 max-w-7xl mx-auto relative bg-background">
+        <nav className="w-full px-6 py-6 md:px-8 md:py-8 flex flex-col md:flex-row justify-between items-center z-20 max-w-7xl mx-auto relative bg-background gap-4 md:gap-0">
           <span className="text-xl md:text-3xl font-serif tracking-wide text-accent-cream uppercase">
             Tushar Sroya
           </span>
-          <div className="flex">
-            <HomeTabs />
+          <div className="flex scale-90 sm:scale-100 origin-center md:origin-right">
+            {/* Show labels always on mobile, expandable on desktop */}
+            <div className="md:hidden">
+              <HomeTabs forceShowLabels={true} />
+            </div>
+            <div className="hidden md:block">
+              <HomeTabs forceShowLabels={false} />
+            </div>
           </div>
         </nav>
 

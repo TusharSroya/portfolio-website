@@ -25,6 +25,7 @@ interface ExpandableTabsProps {
   className?: string;
   activeColor?: string;
   activeTab?: number | null;
+  forceShowLabels?: boolean;
   onChange?: (index: number | null) => void;
 }
 
@@ -54,6 +55,7 @@ export function ExpandableTabs({
   className,
   activeColor = "text-primary",
   activeTab = null,
+  forceShowLabels = false,
   onChange,
 }: ExpandableTabsProps) {
   const [hovered, setHovered] = React.useState<number | null>(null);
@@ -67,6 +69,7 @@ export function ExpandableTabs({
       onMouseLeave={() => setHovered(null)}
       className={cn(
         "flex items-center gap-2 rounded-2xl border bg-background p-1 shadow-sm",
+        forceShowLabels ? "flex-wrap justify-center" : "",
         className
       )}
     >
@@ -87,22 +90,26 @@ export function ExpandableTabs({
             onClick={() => onChange?.(index)}
             transition={transition}
             className={cn(
-              "relative flex items-center rounded-xl px-4 py-2 text-sm font-medium transition-colors duration-300",
+              "relative flex items-center rounded-xl transition-colors duration-300",
+              forceShowLabels ? "px-2.5 py-1.5 gap-1.5" : "px-4 py-2",
               (hovered === index || activeTab === index)
                 ? cn("bg-muted", activeColor)
                 : "text-muted-foreground hover:bg-muted hover:text-foreground"
             )}
           >
-            <Icon size={20} />
+            <Icon size={forceShowLabels ? 16 : 20} />
             <AnimatePresence initial={false}>
-              {(hovered === index || activeTab === index) && (
+              {(hovered === index || activeTab === index || forceShowLabels) && (
                 <motion.span
                   variants={spanVariants}
-                  initial="initial"
+                  initial={forceShowLabels ? "animate" : "initial"}
                   animate="animate"
                   exit="exit"
                   transition={transition}
-                  className="overflow-hidden whitespace-nowrap"
+                  className={cn(
+                    "overflow-hidden whitespace-nowrap",
+                    forceShowLabels ? "text-xs xs:text-sm" : ""
+                  )}
                 >
                   {tab.title}
                 </motion.span>
