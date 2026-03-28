@@ -111,7 +111,7 @@ export default function ValGenesisPage() {
   
   return (
     <main className="w-full min-h-screen bg-background text-accent-cream overflow-x-hidden">
-      <nav className="w-full px-8 py-8 flex justify-between items-center z-20 max-w-7xl mx-auto relative">
+      <nav className="w-full px-6 md:px-8 py-6 md:py-8 flex justify-between items-center z-20 max-w-7xl mx-auto relative">
         <Link href="/" className="group flex items-center gap-2 text-sage hover:text-accent-cream transition-colors font-medium">
           <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
           Back to Home
@@ -121,7 +121,7 @@ export default function ValGenesisPage() {
         </span>
       </nav>
 
-      <div className="max-w-7xl mx-auto py-20 px-8 flex flex-col gap-24">
+      <div className="max-w-7xl mx-auto py-12 md:py-20 px-6 md:px-8 flex flex-col gap-16 md:gap-24">
         
         {/* Header Logic */}
         <div className="max-w-4xl">
@@ -134,10 +134,10 @@ export default function ValGenesisPage() {
               <span className="h-[1px] w-12 bg-sage/30" />
               <span className="text-sm uppercase tracking-[0.3em] font-bold">ValGenesis Experience</span>
             </div>
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif text-accent-cream leading-[1.1]">
+            <h1 className="text-4xl md:text-7xl lg:text-8xl font-serif text-accent-cream leading-[1.1]">
               Application <span className="text-sage italic">Engineer</span>
             </h1>
-            <p className="text-xl md:text-2xl text-accent-cream/60 font-serif italic max-w-2xl leading-relaxed">
+            <p className="text-lg md:text-2xl text-accent-cream/60 font-serif italic max-w-2xl leading-relaxed">
               &quot;Three years, One company, A junior hire who became the person the team turned to, for training, for escalations, and for the client nobody else could crack.&quot;
             </p>
           </motion.div>
@@ -157,11 +157,11 @@ export default function ValGenesisPage() {
           ))}
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 md:gap-16 items-start">
           
           {/* Main Narrative - Left Column */}
-          <div className="lg:col-span-7 flex flex-col gap-16">
-            <div className="flex flex-col gap-8 text-accent-cream/70 text-lg leading-relaxed font-light">
+          <div className="lg:col-span-7 flex flex-col gap-12 md:gap-16">
+            <div className="flex flex-col gap-6 md:gap-8 text-accent-cream/70 text-lg leading-relaxed font-light">
                <p>
                 I joined ValGenesis as one of <span className="text-accent-cream font-normal underline decoration-sage/50 underline-offset-4">50 applicants</span> selected for the Application Engineer role, supporting North American life sciences clients using their Validation Lifecycle Management platform. 
               </p>
@@ -191,7 +191,7 @@ export default function ValGenesisPage() {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="p-10 rounded-[2.5rem] bg-sage/5 border border-sage/20 flex flex-col gap-10 shadow-2xl relative overflow-hidden group hover:bg-sage/10 transition-colors"
+              className="p-6 md:p-10 rounded-3xl md:rounded-[2.5rem] bg-sage/5 border border-sage/20 flex flex-col gap-6 md:gap-10 shadow-2xl relative overflow-hidden group hover:bg-sage/10 transition-colors"
             >
               <div className="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity">
                 <Globe className="w-32 h-32 text-sage" />
@@ -200,7 +200,7 @@ export default function ValGenesisPage() {
               <div className="flex flex-col gap-6 relative z-10">
                 <div className="flex items-center gap-3">
                    <div className="px-3 py-1 rounded-full bg-sage/20 text-sage text-[10px] font-bold tracking-widest uppercase border border-sage/30">Excellence Recognition</div>
-                   <h3 className="text-2xl md:text-3xl font-serif text-accent-cream">Delivered Training Internationally, Lisbon, Portugal (2024)</h3>
+                   <h3 className="text-xl md:text-3xl font-serif text-accent-cream">Delivered Training Internationally, Lisbon, Portugal (2024)</h3>
                 </div>
                 <p className="text-accent-cream/60 leading-relaxed text-lg font-light">
                    Selected to represent the North American team and fly to ValGenesis&apos;s Lisbon office to upskill global Application Engineers and team leads. I designed and delivered a structured training program from scratch, covering ticket lifecycle management, system workflows, and hands-on troubleshooting.
@@ -208,7 +208,7 @@ export default function ValGenesisPage() {
               </div>
 
               {/* Slide Gallery */}
-              <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 relative z-10">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 relative z-10">
                 {trainingSlides.map((slide, i) => (
                   <div 
                     key={i} 
@@ -237,7 +237,7 @@ export default function ValGenesisPage() {
             {/* Lightbox Modal with Next/Prev and Descriptions */}
             {selectedSlideIdx !== null && (
               <div 
-                className="fixed inset-0 z-[100] bg-background/95 backdrop-blur-xl flex items-center justify-center p-8 md:p-12"
+                className="fixed inset-0 z-[100] bg-background/95 backdrop-blur-xl flex items-center justify-center p-4 md:p-12"
                 onClick={() => setSelectedSlideIdx(null)}
               >
                 <div className="relative max-w-6xl w-full h-full flex flex-col items-center justify-center gap-8">
@@ -279,14 +279,14 @@ export default function ValGenesisPage() {
                   <motion.div 
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className="text-center flex flex-col gap-3 max-w-2xl px-8"
+                    className="text-center flex flex-col gap-3 max-w-2xl px-4 md:px-8"
                     onClick={(e) => e.stopPropagation()}
                   >
                     <div className="flex items-center justify-center gap-4 text-xs font-bold uppercase tracking-[0.2em] text-sage">
                        <span className="opacity-50">Slide {selectedSlideIdx + 1} of {trainingSlides.length}</span>
                     </div>
-                    <h4 className="text-3xl font-serif text-accent-cream">{trainingSlides[selectedSlideIdx].title}</h4>
-                    <p className="text-lg text-accent-cream/60 font-light leading-relaxed italic">&quot;{trainingSlides[selectedSlideIdx].desc}&quot;</p>
+                    <h4 className="text-2xl md:text-3xl font-serif text-accent-cream">{trainingSlides[selectedSlideIdx].title}</h4>
+                    <p className="text-base md:text-lg text-accent-cream/60 font-light leading-relaxed italic">&quot;{trainingSlides[selectedSlideIdx].desc}&quot;</p>
                   </motion.div>
 
                   {/* Close Button */}
@@ -302,7 +302,7 @@ export default function ValGenesisPage() {
           </div>
 
           {/* Vertical Timeline - Right Column */}
-          <div className="lg:col-span-5 flex flex-col gap-12 relative">
+          <div className="lg:col-span-5 flex flex-col gap-8 md:gap-12 relative">
              <div className="absolute left-[27px] top-4 bottom-4 w-[2px] bg-gradient-to-b from-sage/0 via-sage/20 to-sage/0" />
              
              {milestones.map((milestone, i) => (

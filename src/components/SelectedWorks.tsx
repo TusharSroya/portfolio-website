@@ -33,33 +33,33 @@ export const SelectedWorks = () => {
   ];
 
   return (
-    <section id="work" className="w-full py-32 px-8 bg-background relative z-10">
+    <section id="work" className="w-full py-16 md:py-32 px-6 md:px-8 bg-background relative z-10">
       <div className="max-w-7xl mx-auto">
-        <div className="mb-20">
+        <div className="mb-12 md:mb-20">
           <h2 className="text-sage text-sm md:text-base uppercase tracking-[0.2em] mb-4 font-semibold">
             My Work
           </h2>
-          <h3 className="text-4xl md:text-5xl font-serif text-accent-cream">
+          <h3 className="text-3xl md:text-5xl font-serif text-accent-cream">
             What this looks like in practice.
           </h3>
         </div>
 
         <div className="flex flex-col gap-12 text-accent-cream">
           {projects.map((project, idx) => (
-            <div key={idx} className="group relative border border-sage/20 rounded-3xl p-8 md:p-12 hover:bg-sage/10 transition-all duration-300 overflow-hidden flex flex-col md:flex-row gap-8 md:gap-16">
+            <div key={idx} className="group relative border border-sage/20 rounded-3xl p-6 md:p-12 hover:bg-sage/10 transition-all duration-300 overflow-hidden flex flex-col md:flex-row gap-8 md:gap-16">
               
               {/* Left Column (Title & Role) */}
               <div className="md:w-1/3 flex flex-col gap-4">
-                 <div className="w-14 h-14 bg-sage/10 rounded-full flex items-center justify-center text-sage mb-4">
+                 <div className="w-14 h-14 bg-sage/10 rounded-full flex items-center justify-center text-sage mb-2 md:mb-4">
                    <project.icon className="w-7 h-7" strokeWidth={1.5} />
                  </div>
-                 <h4 className="text-3xl font-serif leading-tight">{project.title}</h4>
-                 <p className="text-sage uppercase tracking-wider text-xs md:text-sm font-semibold mt-2">{project.role}</p>
+                 <h4 className="text-2xl md:text-3xl font-serif leading-tight">{project.title}</h4>
+                 <p className="text-sage uppercase tracking-wider text-xs md:text-sm font-semibold mt-1 md:mt-2">{project.role}</p>
               </div>
 
               {/* Right Column (Details) */}
-              <div className="md:w-2/3 flex flex-col gap-8 border-t md:border-t-0 md:border-l border-sage/20 pt-8 md:pt-0 md:pl-12">
-                <div className="flex flex-col gap-3">
+              <div className="md:w-2/3 flex flex-col gap-6 md:gap-8 border-t md:border-t-0 md:border-l border-sage/20 pt-6 md:pt-0 md:pl-12">
+                <div className="flex flex-col gap-2 md:gap-3">
                   <h5 className="text-sm uppercase tracking-widest text-sage/70 font-semibold">The Problem</h5>
                   <p className="text-lg font-light leading-relaxed">{project.problem}</p>
                 </div>

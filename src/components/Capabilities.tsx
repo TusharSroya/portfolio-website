@@ -20,13 +20,13 @@ export const Capabilities = () => {
   ];
 
   return (
-    <section id="capabilities" className="w-full py-32 px-8 bg-background relative z-10">
+    <section id="capabilities" className="w-full py-16 md:py-32 px-6 md:px-8 bg-background relative z-10">
       <div className="max-w-7xl mx-auto">
-        <div className="mb-20">
+        <div className="mb-12 md:mb-20">
           <h2 className="text-sage text-sm md:text-base uppercase tracking-[0.2em] mb-4 font-semibold">
             Capabilities
           </h2>
-          <h3 className="text-4xl md:text-5xl font-serif text-accent-cream">
+          <h3 className="text-3xl md:text-5xl font-serif text-accent-cream">
             Where I&apos;m most useful.
           </h3>
         </div>

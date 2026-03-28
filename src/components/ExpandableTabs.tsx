@@ -24,6 +24,7 @@ interface ExpandableTabsProps {
   tabs: TabItem[];
   className?: string;
   activeColor?: string;
+  activeTab?: number | null;
   onChange?: (index: number | null) => void;
 }
 
@@ -52,6 +53,7 @@ export function ExpandableTabs({
   tabs,
   className,
   activeColor = "text-primary",
+  activeTab = null,
   onChange,
 }: ExpandableTabsProps) {
   const [hovered, setHovered] = React.useState<number | null>(null);
@@ -80,20 +82,20 @@ export function ExpandableTabs({
             variants={buttonVariants}
             initial={false}
             animate="animate"
-            custom={hovered === index}
+            custom={hovered === index || activeTab === index}
             onMouseEnter={() => setHovered(index)}
             onClick={() => onChange?.(index)}
             transition={transition}
             className={cn(
               "relative flex items-center rounded-xl px-4 py-2 text-sm font-medium transition-colors duration-300",
-              hovered === index
+              (hovered === index || activeTab === index)
                 ? cn("bg-muted", activeColor)
                 : "text-muted-foreground hover:bg-muted hover:text-foreground"
             )}
           >
             <Icon size={20} />
             <AnimatePresence initial={false}>
-              {hovered === index && (
+              {(hovered === index || activeTab === index) && (
                 <motion.span
                   variants={spanVariants}
                   initial="initial"

@@ -64,7 +64,7 @@ export function LandingScreen() {
 
       {/* Content, fades out when exiting */}
       <div
-        className="relative z-10 flex flex-col items-center text-center px-8 gap-10"
+        className="relative z-10 flex flex-col items-center text-center px-6 md:px-8 gap-6 md:gap-10"
         style={{
           transition: "opacity 0.4s ease",
           opacity: exiting ? 0 : 1,
@@ -78,7 +78,7 @@ export function LandingScreen() {
             Welcome
           </p>
           <h1
-            className="text-6xl md:text-8xl lg:text-[7rem] font-serif leading-none"
+            className="text-5xl md:text-7xl lg:text-[7rem] font-serif leading-none"
             style={{ color: "#E8DDBC" }}
           >
             Hi. I&rsquo;m Tushar.
@@ -94,7 +94,7 @@ export function LandingScreen() {
         <div className="flex flex-col sm:flex-row gap-4 items-center">
           <button
             onClick={handleLearn}
-            className="group relative px-10 py-4 rounded-full font-semibold text-sm tracking-wide transition-all duration-300 hover:scale-105"
+            className="group relative px-6 py-3 md:px-10 md:py-4 rounded-full font-semibold text-sm tracking-wide transition-all duration-300 hover:scale-105"
             style={{
               backgroundColor: "#E8DDBC",
               color: "#2A4535",
@@ -104,7 +104,7 @@ export function LandingScreen() {
           </button>
           <button
             onClick={handleEnter}
-            className="px-10 py-4 rounded-full font-semibold text-sm tracking-wide border transition-all duration-300 hover:scale-105"
+            className="px-6 py-3 md:px-10 md:py-4 rounded-full font-semibold text-sm tracking-wide border transition-all duration-300 hover:scale-105"
             style={{
               borderColor: "rgba(232, 221, 188, 0.3)",
               color: "rgba(232, 221, 188, 0.7)",

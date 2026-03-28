@@ -37,7 +37,7 @@ export default function NurseShieldPage() {
       </nav>
 
       {/* Hero Section */}
-      <article className="max-w-6xl mx-auto w-full px-8 py-20 flex flex-col gap-24 font-light text-lg leading-relaxed">
+      <article className="max-w-6xl mx-auto w-full px-6 md:px-8 py-12 md:py-20 flex flex-col gap-16 md:gap-24 font-light text-lg leading-relaxed">
         
         {/* Header */}
         <header className="flex flex-col gap-8">
@@ -48,10 +48,10 @@ export default function NurseShieldPage() {
               </span>
             ))}
           </div>
-          <h1 className="text-6xl md:text-8xl font-serif text-accent-cream leading-[1.05] tracking-tight">
+          <h1 className="text-5xl md:text-8xl font-serif text-accent-cream leading-[1.05] tracking-tight">
             {project.title}
           </h1>
-          <div className="flex flex-col md:flex-row gap-8 md:gap-16 mt-4 border-l-2 border-sage/30 pl-8 relative">
+          <div className="flex flex-col md:flex-row gap-8 md:gap-16 mt-4 border-l-2 border-sage/30 pl-6 md:pl-8 relative">
             <div className="flex flex-col gap-2">
               <p className="text-xs uppercase tracking-widest text-sage/70 font-semibold italic">Core Role</p>
               <p className="text-xl font-medium">{project.role}</p>
@@ -76,7 +76,7 @@ export default function NurseShieldPage() {
         </header>
 
         {/* 1. The Vision Section */}
-        <section className="bg-sage/5 rounded-[3rem] p-10 md:p-16 border border-sage/10 relative overflow-hidden group">
+        <section className="bg-sage/5 rounded-3xl md:rounded-[3rem] p-6 md:p-16 border border-sage/10 relative overflow-hidden group">
           <div className="absolute top-0 right-0 w-64 h-64 bg-sage/5 rounded-full blur-3xl -z-10 transform translate-x-1/2 -translate-y-1/2 group-hover:bg-sage/10 transition-colors" />
           
           <div className="flex flex-col gap-12">
@@ -84,17 +84,17 @@ export default function NurseShieldPage() {
               <h2 className="text-sm uppercase tracking-[0.3em] text-sage font-bold flex items-center gap-3">
                 <Lightbulb className="w-5 h-5" /> The Vision
               </h2>
-              <p className="text-2xl md:text-3xl font-serif text-accent-cream leading-tight">
+              <p className="text-xl md:text-3xl font-serif text-accent-cream leading-tight">
                 Reducing cognitive overload in environments where time is a luxury that nurses cannot afford.
               </p>
             </div>
 
-            <p className="text-xl md:text-2xl text-accent-cream/70 leading-relaxed font-light">
+            <p className="text-lg md:text-2xl text-accent-cream/70 leading-relaxed font-light">
               The goal was to focus on <span className="text-accent-cream font-medium italic">mental recovery</span> rather than simple efficiency. Instead of fighting strict industry regulations that make reducing charting times nearly impossible, NurseShield aimed to provide nurse managers with transparency into the real-time cognitive and stress overload of their staff.
             </p>
 
             {/* Sub-sections: Challenge, Process, Impact (Moved under Vision) */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-12 pt-12 border-t border-sage/10">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 pt-8 md:pt-12 border-t border-sage/10">
               <div className="flex flex-col gap-4">
                 <div className="flex items-center gap-3 text-sage mb-2">
                   <Target className="w-5 h-5" />

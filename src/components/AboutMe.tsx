@@ -21,8 +21,8 @@ export function AboutMe() {
   ];
 
   return (
-    <section id="about" className="w-full py-32 px-8 bg-background relative z-10 border-t border-sage/10">
-      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-20">
+    <section id="about" className="w-full py-16 md:py-32 px-6 md:px-8 bg-background relative z-10 border-t border-sage/10">
+      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-12 lg:gap-20">
         
         {/* Left Column: Story & Passions */}
         <div className="flex-1 flex flex-col gap-12">
@@ -30,7 +30,7 @@ export function AboutMe() {
             <h2 className="text-sage text-sm md:text-base uppercase tracking-[0.2em] mb-4 font-semibold">
               About Me
             </h2>
-            <h3 className="text-4xl md:text-5xl font-serif text-accent-cream leading-tight mb-8">
+            <h3 className="text-3xl md:text-5xl font-serif text-accent-cream leading-tight mb-6 md:mb-8">
               Systems thinker, <br />
               visual storyteller.
             </h3>
@@ -44,7 +44,7 @@ export function AboutMe() {
             </div>
           </div>
 
-          <div className="border border-sage/20 rounded-2xl p-8 bg-sage/5 hover:bg-sage/10 transition-colors">
+          <div className="border border-sage/20 rounded-2xl p-6 md:p-8 bg-sage/5 hover:bg-sage/10 transition-colors">
             <h4 className="text-xl font-serif text-accent-cream mb-4 border-l-2 border-sage pl-3">Beyond Product Management</h4>
             <p className="text-accent-cream/80 font-light leading-relaxed mb-6">
               When I'm not whiteboarding product architecture, you'll find me behind a lens. Photography fundamentally shapes how I approach product design, it's all about framing the right perspective and capturing the narrative.
