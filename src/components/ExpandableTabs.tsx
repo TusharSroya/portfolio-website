@@ -69,77 +69,97 @@ export function ExpandableTabs({
       onMouseLeave={() => setHovered(null)}
       className={cn(
         "flex items-center gap-2 rounded-2xl border bg-background p-1 shadow-sm",
-        forceShowLabels ? "flex-wrap justify-center" : "",
+        forceShowLabels ? "justify-start xs:justify-center whitespace-nowrap" : "",
         className
       )}
     >
       {tabs.map((tab, index) => {
         if (tab.type === "separator") {
+          // Hide separators on mobile when forcing labels to save space
+          if (forceShowLabels) return null;
           return <Separator key={`separator-${index}`} />;
         }
 
         const Icon = tab.icon;
         return (
-          <motion.button
-            key={tab.title}
-            variants={buttonVariants}
-            initial={false}
-            animate="animate"
-            custom={hovered === index || activeTab === index}
-            onMouseEnter={() => setHovered(index)}
-            onClick={() => onChange?.(index)}
-            transition={transition}
-            className={cn(
-              "relative flex items-center rounded-xl transition-colors duration-300",
-              forceShowLabels ? "px-2.5 py-1.5 gap-1.5" : "px-4 py-2",
-              (hovered === index || activeTab === index)
-                ? cn("bg-muted", activeColor)
-                : "text-muted-foreground hover:bg-muted hover:text-foreground"
-            )}
+          <div 
+            key={index} 
+            className="relative"
+            onMouseEnter={() => !forceShowLabels && setHovered(index)}
+            onMouseLeave={() => !forceShowLabels && setHovered(null)}
           >
-            <Icon size={forceShowLabels ? 16 : 20} />
-            <AnimatePresence initial={false}>
-              {(hovered === index || activeTab === index || forceShowLabels) && (
-                <motion.span
-                  variants={spanVariants}
-                  initial={forceShowLabels ? "animate" : "initial"}
-                  animate="animate"
-                  exit="exit"
-                  transition={transition}
-                  className={cn(
-                    "overflow-hidden whitespace-nowrap",
-                    forceShowLabels ? "text-xs xs:text-sm" : ""
-                  )}
-                >
-                  {tab.title}
-                </motion.span>
+            <motion.button
+              layout
+              variants={buttonVariants}
+              initial={false}
+              animate="animate"
+              custom={hovered === index || activeTab === index}
+              onClick={() => {
+                if (tab.dropdown) {
+                  setHovered(hovered === index ? null : index);
+                }
+                onChange?.(index);
+              }}
+              transition={transition}
+              className={cn(
+                "relative flex items-center rounded-xl transition-colors duration-300 shrink-0",
+                forceShowLabels ? "px-1.5 xs:px-2.5 py-1.5 gap-1" : "px-4 py-2",
+                (hovered === index || activeTab === index)
+                  ? cn("bg-muted", activeColor)
+                  : "text-muted-foreground hover:bg-muted hover:text-foreground"
               )}
-            </AnimatePresence>
-
-            <AnimatePresence>
-              {hovered === index && tab.dropdown && (
-                <motion.div
-                  initial={{ opacity: 0, y: 10, scale: 0.95 }}
-                  animate={{ opacity: 1, y: 0, scale: 1 }}
-                  exit={{ opacity: 0, y: 10, scale: 0.95 }}
-                  transition={{ duration: 0.2 }}
-                  className="absolute top-[calc(100%+0.5rem)] left-0 z-50 flex flex-col min-w-48 bg-background border border-sage/20 rounded-xl p-1.5 shadow-[0_8px_30px_rgb(0,0,0,0.6)]"
-                >
-                  {tab.dropdown.map(drop => (
-                    <a 
-                      key={drop.title} 
-                      href={drop.href} 
-                      className="text-left text-accent-cream/80 hover:text-sage hover:bg-sage/10 px-3 py-2 rounded-lg transition-colors text-sm whitespace-nowrap"
-                      onClick={(e) => e.stopPropagation()}
+            >
+              <Icon size={forceShowLabels ? 14 : 20} />
+                <AnimatePresence initial={false}>
+                  {(hovered === index || activeTab === index || forceShowLabels) && (
+                    <motion.span
+                      initial={{ width: 0, opacity: 0 }}
+                      animate={{ width: "auto", opacity: 1 }}
+                      exit={{ width: 0, opacity: 0 }}
+                      transition={transition}
+                      className={cn(
+                        "overflow-hidden whitespace-nowrap",
+                        forceShowLabels ? "text-[10px] sm:text-xs" : ""
+                      )}
                     >
-                      {drop.title}
-                    </a>
-                  ))}
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </motion.button>
-        );
+                      {tab.title}
+                    </motion.span>
+                  )}
+                </AnimatePresence>
+              </motion.button>
+
+              <AnimatePresence>
+                {hovered === index && tab.dropdown && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 10, scale: 0.95 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    exit={{ opacity: 0, y: 10, scale: 0.95 }}
+                    transition={{ duration: 0.2 }}
+                    className={cn(
+                      "absolute top-[calc(100%+0.5rem)] z-50 flex flex-col min-w-48 bg-background border border-sage/20 rounded-xl p-1.5 shadow-[0_8px_30px_rgb(0,0,0,0.6)]",
+                      index > 2 ? "right-0" : "left-0"
+                    )}
+                  >
+                    <div className="flex flex-col w-full gap-0.5 relative">
+                      {tab.dropdown.map(drop => (
+                        <a 
+                          key={drop.title} 
+                          href={drop.href} 
+                          className="text-left text-accent-cream/80 hover:text-sage hover:bg-sage/10 px-3 py-2 rounded-lg transition-colors text-sm whitespace-nowrap block w-full z-[60]"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            setHovered(null);
+                          }}
+                        >
+                          {drop.title}
+                        </a>
+                      ))}
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+          );
       })}
     </div>
   );
