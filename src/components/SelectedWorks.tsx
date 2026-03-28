@@ -1,3 +1,5 @@
+"use client";
+
 import { Stethoscope, Database, Activity, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { motion } from "framer-motion";
