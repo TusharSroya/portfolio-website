@@ -9,6 +9,8 @@
   
   --font-serif: var(--font-playfair);
   --font-sans: var(--font-inter);
+
+  --breakpoint-xs: 480px;
 }
 
 :root {

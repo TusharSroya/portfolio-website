@@ -16,6 +16,7 @@ import {
   ArrowLeft
 } from 'lucide-react';
 import Link from 'next/link';
+import { PortfolioTabs } from "@/components/NavigationTabs";
 
 const stats = [
   { label: "Tickets Closed", value: 420, suffix: "+", icon: <CheckCircle2 className="w-5 h-5 text-sage" /> },
@@ -111,14 +112,15 @@ export default function ValGenesisPage() {
   
   return (
     <main className="w-full min-h-screen bg-background text-accent-cream overflow-x-hidden">
-      <nav className="w-full px-6 md:px-8 py-6 md:py-8 flex justify-between items-center z-20 max-w-7xl mx-auto relative">
-        <Link href="/" className="group flex items-center gap-2 text-sage hover:text-accent-cream transition-colors font-medium">
+      <nav className="w-full px-6 py-6 md:px-8 md:py-8 flex justify-between items-center z-20 max-w-7xl mx-auto border-b border-sage/10 relative gap-4">
+        <Link href="/" className="group flex items-center gap-2 text-[10px] md:text-sm tracking-widest uppercase font-medium text-sage hover:text-accent-cream transition-colors whitespace-nowrap">
           <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
-          Back to Home
+          <span className="hidden xs:inline">Back to Home</span>
+          <span className="xs:hidden">Home</span>
         </Link>
-        <span className="text-lg md:text-xl font-serif tracking-wide text-accent-cream uppercase opacity-60">
-          ValGenesis Experience
-        </span>
+        <div className="flex">
+          <PortfolioTabs />
+        </div>
       </nav>
 
       <div className="max-w-7xl mx-auto py-12 md:py-20 px-6 md:px-8 flex flex-col gap-16 md:gap-24">

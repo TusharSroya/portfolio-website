@@ -9,15 +9,16 @@ export default function AttioComingSoon() {
   return (
     <main className="min-h-screen bg-background text-accent-cream flex flex-col">
       {/* Navigation */}
-      <nav className="w-full px-6 md:px-8 py-6 md:py-8 flex justify-between items-center z-10 max-w-7xl mx-auto border-b border-sage/10 relative">
+      <nav className="w-full px-6 py-6 md:px-8 md:py-8 flex justify-between items-center z-10 max-w-7xl mx-auto border-b border-sage/10 relative gap-4">
         <Link
           href="/"
-          className="group flex items-center gap-2 text-sm tracking-widest uppercase font-medium text-sage hover:text-accent-cream transition-colors"
+          className="group flex items-center gap-2 text-[10px] md:text-sm tracking-widest uppercase font-medium text-sage hover:text-accent-cream transition-colors whitespace-nowrap"
         >
           <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
-          Back to Home
+          <span className="hidden xs:inline">Back to Home</span>
+          <span className="xs:hidden">Home</span>
         </Link>
-        <div className="hidden md:block">
+        <div className="flex">
           <PortfolioTabs />
         </div>
       </nav>

@@ -14,11 +14,11 @@ export default function Home() {
       {/* HERO WRAPPER - Encapsulates the top section */}
       <div className="relative w-full min-h-screen flex flex-col">
         {/* Navigation - Solid background ensures it stays visually separated from the pattern */}
-        <nav className="w-full px-8 py-8 flex justify-between items-center z-20 max-w-7xl mx-auto relative bg-background">
-          <span className="text-3xl font-serif tracking-wide text-accent-cream uppercase">
+        <nav className="w-full px-6 py-6 md:px-8 md:py-8 flex justify-between items-center z-20 max-w-7xl mx-auto relative bg-background">
+          <span className="text-xl md:text-3xl font-serif tracking-wide text-accent-cream uppercase">
             Tushar Sroya
           </span>
-          <div className="hidden md:block">
+          <div className="flex">
             <HomeTabs />
           </div>
         </nav>
