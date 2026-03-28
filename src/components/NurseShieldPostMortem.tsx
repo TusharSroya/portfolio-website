@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { ArrowRight, AlertTriangle, Lightbulb, Clock, Shield, Brain, X, ZoomIn, ChevronLeft, ChevronRight, Play } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 export default function NurseShieldPostMortem() {
   const [selectedIdx, setSelectedIdx] = useState<number | null>(null);
@@ -115,17 +116,44 @@ export default function NurseShieldPostMortem() {
                 <p className="text-accent-cream/70 text-base leading-relaxed mt-2">{item.desc}</p>
               </div>
 
-              <div 
-                className="mt-4 w-full bg-black/40 rounded-3xl border border-sage/10 flex items-center justify-center relative overflow-hidden cursor-zoom-in group/img shadow-inner"
+              <motion.div 
+                className="mt-4 w-full bg-black/40 rounded-3xl border border-sage/10 flex items-center justify-center relative overflow-hidden cursor-zoom-in shadow-inner"
+                initial="idle"
+                whileHover="active"
+                whileInView="active"
+                viewport={{ margin: "-20% 0px -20% 0px", amount: 0.5 }}
                 onClick={() => setSelectedIdx(i)}
               >
-                <img src={item.img} alt={item.title} className="w-full h-auto object-cover opacity-85 group-hover:opacity-100 group-hover:scale-[1.03] transition-all duration-1000 ease-out" />
-                <div className="absolute inset-0 bg-sage/5 opacity-0 group-hover/img:opacity-100 transition-opacity flex items-center justify-center backdrop-blur-[2px]">
-                   <div className="bg-black/80 backdrop-blur-xl p-5 rounded-full border border-sage/30 transform translate-y-6 group-hover/img:translate-y-0 transition-all duration-700 shadow-2xl">
+                <motion.img 
+                  src={item.img} 
+                  alt={item.title} 
+                  variants={{
+                    idle: { opacity: 0.85, scale: 1 },
+                    active: { opacity: 1, scale: 1.03 }
+                  }}
+                  transition={{ duration: 1, ease: "easeOut" }}
+                  className="w-full h-auto object-cover" 
+                />
+                <motion.div 
+                  variants={{
+                    idle: { opacity: 0 },
+                    active: { opacity: 1 }
+                  }}
+                  transition={{ duration: 0.5 }}
+                  className="absolute inset-0 bg-sage/5 flex items-center justify-center backdrop-blur-[2px]"
+                >
+                   <motion.div 
+                     variants={{
+                       idle: { y: 24 },
+                       active: { y: 0 }
+                     }}
+                     transition={{ duration: 0.7 }}
+                     className="bg-black/80 backdrop-blur-xl p-5 rounded-full border border-sage/30 shadow-2xl"
+                   >
                      <ZoomIn className="w-8 h-8 text-sage" />
-                   </div>
-                </div>
-              </div>
+                   </motion.div>
+                </motion.div>
+              </motion.div>
             </div>
           ))}
         </div>

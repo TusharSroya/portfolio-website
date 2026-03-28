@@ -1,5 +1,6 @@
 import { Stethoscope, Database, Activity, ArrowRight } from "lucide-react";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 export const SelectedWorks = () => {
   const projects = [
@@ -46,10 +47,22 @@ export const SelectedWorks = () => {
 
         <div className="flex flex-col gap-12 text-accent-cream">
           {projects.map((project, idx) => (
-            <div key={idx} className="group relative border border-sage/20 rounded-3xl p-6 md:p-12 hover:bg-sage/10 transition-all duration-300 overflow-hidden flex flex-col md:flex-row gap-8 md:gap-16">
+            <motion.div 
+              key={idx} 
+              className="group relative border border-sage/20 rounded-3xl p-6 md:p-12 overflow-hidden flex flex-col md:flex-row gap-8 md:gap-16 shadow-lg hover:shadow-xl transition-shadow duration-300"
+              initial="idle"
+              whileHover="active"
+              whileInView="active"
+              viewport={{ margin: "-20% 0px -20% 0px", amount: 0.3 }}
+            >
+              <motion.div 
+                variants={{ idle: { opacity: 0 }, active: { opacity: 1 } }}
+                transition={{ duration: 0.5 }}
+                className="absolute inset-0 bg-sage/10 pointer-events-none -z-10"
+              />
               
               {/* Left Column (Title & Role) */}
-              <div className="md:w-1/3 flex flex-col gap-4">
+              <div className="md:w-1/3 flex flex-col gap-4 relative z-10">
                  <div className="w-14 h-14 bg-sage/10 rounded-full flex items-center justify-center text-sage mb-2 md:mb-4">
                    <project.icon className="w-7 h-7" strokeWidth={1.5} />
                  </div>
@@ -58,7 +71,7 @@ export const SelectedWorks = () => {
               </div>
 
               {/* Right Column (Details) */}
-              <div className="md:w-2/3 flex flex-col gap-6 md:gap-8 border-t md:border-t-0 md:border-l border-sage/20 pt-6 md:pt-0 md:pl-12">
+              <div className="md:w-2/3 flex flex-col gap-6 md:gap-8 border-t md:border-t-0 md:border-l border-sage/20 pt-6 md:pt-0 md:pl-12 relative z-10">
                 <div className="flex flex-col gap-2 md:gap-3">
                   <h5 className="text-sm uppercase tracking-widest text-sage/70 font-semibold">The Problem</h5>
                   <p className="text-lg font-light leading-relaxed">{project.problem}</p>
@@ -82,7 +95,7 @@ export const SelectedWorks = () => {
                   </Link>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

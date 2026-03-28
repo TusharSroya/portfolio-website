@@ -210,22 +210,39 @@ export default function ValGenesisPage() {
               {/* Slide Gallery */}
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 relative z-10">
                 {trainingSlides.map((slide, i) => (
-                  <div 
+                  <motion.div 
                     key={i} 
-                    className="group/slide aspect-[4/3] rounded-xl bg-background border border-sage/20 overflow-hidden cursor-zoom-in hover:border-sage/50 transition-all flex items-center justify-center relative shadow-lg"
+                    className="aspect-[4/3] rounded-xl bg-background border border-sage/20 overflow-hidden cursor-zoom-in hover:border-sage/50 transition-colors flex items-center justify-center relative shadow-lg"
+                    initial="idle"
+                    whileHover="active"
+                    whileInView="active"
+                    viewport={{ margin: "-20% 0px -20% 0px", amount: 0.5 }}
                     onClick={() => setSelectedSlideIdx(i)}
                   >
-                    <img 
+                    <motion.img 
                       src={slide.img} 
                       alt={slide.title}
-                      className="w-full h-full object-cover opacity-80 group-hover/slide:opacity-100 group-hover/slide:scale-105 transition-all duration-700"
+                      variants={{
+                        idle: { opacity: 0.8, scale: 1 },
+                        active: { opacity: 1, scale: 1.05 }
+                      }}
+                      transition={{ duration: 0.7, ease: "easeOut" }}
+                      className="w-full h-full object-cover"
                     />
-                    <div className="absolute inset-0 bg-sage/5 opacity-0 group-hover/slide:opacity-100 transition-opacity flex items-center justify-center backdrop-blur-[1px]">
-                       <div className="bg-black/60 p-2 rounded-full border border-sage/20 scale-90 group-hover/slide:scale-100 transition-transform">
+                    <motion.div 
+                      variants={{ idle: { opacity: 0 }, active: { opacity: 1 } }}
+                      transition={{ duration: 0.3 }}
+                      className="absolute inset-0 bg-sage/5 flex items-center justify-center backdrop-blur-[1px]"
+                    >
+                       <motion.div 
+                         variants={{ idle: { scale: 0.9 }, active: { scale: 1 } }}
+                         transition={{ duration: 0.4 }}
+                         className="bg-black/60 p-2 rounded-full border border-sage/20"
+                       >
                          <ArrowUpRight className="w-4 h-4 text-sage" />
-                       </div>
-                    </div>
-                  </div>
+                       </motion.div>
+                    </motion.div>
+                  </motion.div>
                 ))}
               </div>
               
