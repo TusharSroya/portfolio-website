@@ -29,5 +29,15 @@ export const portfolioData = {
     process: "Diagnosed the root software workflow issues. Delivered 700+ technical solutions globally and led 12+ international training sessions. Acted as the core technical liaison between engineering and the client.",
     impact: "Reduced open tickets from 50+ to just 4 within 2 months using agile workflows, serving as the executive spokesperson. Maintained 98% satisfaction.",
     tags: ["Enterprise SaaS", "Agile Workflows", "Application Engineering", "Client Escalations"]
+  },
+  civictwin: {
+    title: "CivicTwin Spark (NVIDIA Hackathon)",
+    role: "Developer",
+    timeline: "May 2026 - Jun 2026",
+    heroImage: "/placeholder.png",
+    problem: "Cities lack a way to stress-test their 311 service request systems against realistic urban friction and emergency situations.",
+    process: "Built an agentic urban friction and emergency simulation sandbox running 10,000 generative citizen agents through a spatial-temporal digital twin of Toronto using RAPIDS cuDF, cuML, and NVIDIA NIM.",
+    impact: "Created a closed-loop simulation on the NVIDIA DGX Spark that forecasts 311 demand, triages complaints via embeddings, and generates AI morning briefings locally.",
+    tags: ["Agentic Simulation", "NVIDIA DGX Spark", "Machine Learning", "Hackathon"]
   }
 };
