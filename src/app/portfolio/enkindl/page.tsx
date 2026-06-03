@@ -66,20 +66,6 @@ export default function EnkindlPage() {
           </div>
         </header>
 
-        {/* Voice Orb Hero */}
-        <section className="bg-[#14100B] rounded-3xl md:rounded-[3rem] p-8 md:p-16 border border-sage/10 relative overflow-hidden flex flex-col items-center gap-12">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(244,178,97,0.06)_0%,transparent_60%)]" />
-          <div className="relative z-10 flex flex-col items-center gap-6">
-            <p className="text-xs uppercase tracking-[0.3em] font-bold text-[#F4B261]/70">The Voice Orb</p>
-            <p className="text-accent-cream/50 text-center max-w-md text-base">
-              The only animation that never stops. It breathes at 3.2 seconds. Try switching between states.
-            </p>
-          </div>
-          <div className="relative z-10">
-            <EnkindlVoiceOrbHero />
-          </div>
-        </section>
-
         {/* The Vision */}
         <section className="bg-sage/5 rounded-3xl md:rounded-[3rem] p-6 md:p-16 border border-sage/10 relative overflow-hidden group">
           <div className="absolute top-0 right-0 w-64 h-64 bg-sage/5 rounded-full blur-3xl -z-10 transform translate-x-1/2 -translate-y-1/2 group-hover:bg-sage/10 transition-colors" />
@@ -133,6 +119,20 @@ export default function EnkindlPage() {
           </div>
           <div className="w-full flex justify-center overflow-x-auto py-4">
             <EnkindlClickThrough />
+          </div>
+        </section>
+
+        {/* Voice Orb */}
+        <section className="bg-[#14100B] rounded-3xl md:rounded-[3rem] p-8 md:p-16 border border-sage/10 relative overflow-hidden flex flex-col items-center gap-12">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(244,178,97,0.06)_0%,transparent_60%)]" />
+          <div className="relative z-10 flex flex-col items-center gap-6">
+            <p className="text-xs uppercase tracking-[0.3em] font-bold text-[#F4B261]/70">The Voice Orb</p>
+            <p className="text-accent-cream/50 text-center max-w-md text-base">
+              The only animation that never stops. It breathes at 3.2 seconds. Try switching between states.
+            </p>
+          </div>
+          <div className="relative z-10">
+            <EnkindlVoiceOrbHero />
           </div>
         </section>
 
