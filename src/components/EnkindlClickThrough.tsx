@@ -363,40 +363,58 @@ function FeedbackScreen({ onContinue, onAgain, onBack }: { onContinue: () => voi
 
 // ── Main Export ──
 
-type ScreenKey = "home" | "stages" | "intro" | "conversation" | "feedback";
+export type ScreenKey = "home" | "stages" | "intro" | "conversation" | "feedback";
+const SCREENS: ScreenKey[] = ["home", "stages", "intro", "conversation", "feedback"];
 
+// ── Nav pills (can be placed anywhere) ──
+export function EnkindlNav({ screen, setScreen }: { screen: ScreenKey; setScreen: (s: ScreenKey) => void }) {
+  return (
+    <div className="flex flex-wrap gap-2">
+      {SCREENS.map(k => (
+        <motion.button
+          key={k}
+          onClick={() => setScreen(k)}
+          className="text-[13px] font-semibold px-4 py-2.5 rounded-full border cursor-pointer transition-colors"
+          style={{
+            background: screen === k ? ENK.clay : "rgba(245,237,223,0.06)",
+            color: screen === k ? "#FFF8EC" : "rgba(245,237,223,0.7)",
+            borderColor: screen === k ? ENK.clay : "rgba(245,237,223,0.12)",
+          }}
+          animate={screen === k ? { scale: [1, 1.06, 1] } : {}}
+          transition={{ duration: 0.35, ease: "easeOut" }}
+        >
+          {k.charAt(0).toUpperCase() + k.slice(1)}
+        </motion.button>
+      ))}
+    </div>
+  );
+}
+
+// ── Phone only (no nav) ──
+export function EnkindlPhone({ screen, setScreen }: { screen: ScreenKey; setScreen: (s: ScreenKey) => void }) {
+  const dark = screen === "conversation";
+  return (
+    <AnimatePresence mode="wait">
+      <motion.div key={screen} initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -8 }} transition={{ duration: 0.25 }}>
+        <PhoneFrame dark={dark}>
+          {screen === "home" && <HomeScreen onPickLanguage={() => setScreen("stages")} />}
+          {screen === "stages" && <StageListScreen onBack={() => setScreen("home")} onLesson={() => setScreen("intro")} />}
+          {screen === "intro" && <LessonIntroScreen onBack={() => setScreen("stages")} onStart={() => setScreen("conversation")} />}
+          {screen === "conversation" && <ConversationScreen onEnd={() => setScreen("feedback")} />}
+          {screen === "feedback" && <FeedbackScreen onContinue={() => setScreen("stages")} onAgain={() => setScreen("conversation")} onBack={() => setScreen("stages")} />}
+        </PhoneFrame>
+      </motion.div>
+    </AnimatePresence>
+  );
+}
+
+// ── Combined (for mobile / backwards compat) ──
 export default function EnkindlClickThrough() {
   const [screen, setScreen] = useState<ScreenKey>("home");
-
-  const dark = screen === "conversation";
-
   return (
     <div className="flex flex-col items-center gap-8">
-      {/* nav pills */}
-      <div className="flex gap-2 p-2 rounded-full border border-sage/20" style={{ background: "rgba(31,20,13,0.6)", backdropFilter: "blur(12px)" }}>
-        {(["home", "stages", "intro", "conversation", "feedback"] as const).map(k => (
-          <button key={k} onClick={() => setScreen(k)}
-            className="text-[13px] font-semibold px-3.5 py-2 rounded-full border-0 cursor-pointer transition-all"
-            style={{ background: screen === k ? ENK.clay : "rgba(255,255,255,0.06)", color: screen === k ? "#FFF8EC" : "#F5EDDF" }}>
-            {k.charAt(0).toUpperCase() + k.slice(1)}
-          </button>
-        ))}
-      </div>
-      {/* phone */}
-      <AnimatePresence mode="wait">
-        <motion.div key={screen} initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -8 }} transition={{ duration: 0.25 }}>
-          <PhoneFrame dark={dark}>
-            {screen === "home" && <HomeScreen onPickLanguage={() => setScreen("stages")} />}
-            {screen === "stages" && <StageListScreen onBack={() => setScreen("home")} onLesson={() => setScreen("intro")} />}
-            {screen === "intro" && <LessonIntroScreen onBack={() => setScreen("stages")} onStart={() => setScreen("conversation")} />}
-            {screen === "conversation" && <ConversationScreen onEnd={() => setScreen("feedback")} />}
-            {screen === "feedback" && <FeedbackScreen onContinue={() => setScreen("stages")} onAgain={() => setScreen("conversation")} onBack={() => setScreen("stages")} />}
-          </PhoneFrame>
-        </motion.div>
-      </AnimatePresence>
-      <p className="text-sage/50 text-xs tracking-wide max-w-sm text-center">
-        Tap the nav pills above, or use the in-screen buttons to navigate. The voice orb breathes at 3.2s &mdash; try switching states on the conversation screen.
-      </p>
+      <EnkindlNav screen={screen} setScreen={setScreen} />
+      <EnkindlPhone screen={screen} setScreen={setScreen} />
     </div>
   );
 }

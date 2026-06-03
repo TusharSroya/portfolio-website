@@ -8,6 +8,7 @@ import dynamic from "next/dynamic";
 
 
 const EnkindlClickThrough = dynamic(() => import("@/components/EnkindlClickThrough"), { ssr: false });
+const EnkindlDemoDesktop = dynamic(() => import("@/components/EnkindlDemoDesktop"), { ssr: false });
 
 export default function EnkindlPage() {
   const project = portfolioData.enkindl;
@@ -125,35 +126,9 @@ export default function EnkindlPage() {
               </div>
             </div>
           </div>
-          {/* Desktop: side by side, phone sticky */}
-          <div className="hidden lg:grid lg:grid-cols-[1fr_auto] gap-16 items-start">
-            <div className="sticky top-24 flex flex-col gap-8 py-12">
-              <h2 className="text-4xl md:text-5xl font-serif text-accent-cream leading-tight">
-                Try it yourself.
-              </h2>
-              <p className="text-xl text-accent-cream/60 font-light max-w-md">
-                Tap through the Enkindl iOS app. Home screen, lesson stages, conversation view, feedback.
-              </p>
-              <div className="flex flex-col gap-5 mt-4">
-                {[
-                  { label: "Home", desc: "Pick a language. Eelam Tamil or Household Punjabi." },
-                  { label: "Stages", desc: "Lessons organized by real life moments, with mastery tracking." },
-                  { label: "Intro", desc: "Cultural notes, the phrase in native script, and transliteration." },
-                  { label: "Conversation", desc: "The voice orb. You speak, the coach listens and responds." },
-                  { label: "Feedback", desc: "Articulatory coaching with weighted mastery scoring." },
-                ].map(({ label, desc }) => (
-                  <div key={label} className="flex gap-4 items-start">
-                    <span className="text-xs uppercase tracking-widest text-sage font-bold mt-1 w-28 flex-shrink-0">{label}</span>
-                    <span className="text-accent-cream/60 text-sm leading-relaxed">{desc}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div className="py-8">
-              <div style={{ zoom: 0.78 }}>
-                <EnkindlClickThrough />
-              </div>
-            </div>
+          {/* Desktop: side by side, nav on left, phone on right */}
+          <div className="hidden lg:block">
+            <EnkindlDemoDesktop />
           </div>
         </section>
 
