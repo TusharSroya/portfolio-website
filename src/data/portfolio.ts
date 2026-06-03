@@ -30,6 +30,16 @@ export const portfolioData = {
     impact: "Reduced open tickets from 50+ to just 4 within 2 months using agile workflows, serving as the executive spokesperson. Maintained 98% satisfaction.",
     tags: ["Enterprise SaaS", "Agile Workflows", "Application Engineering", "Client Escalations"]
   },
+  enkindl: {
+    title: "Enkindl",
+    role: "Founder & Developer",
+    timeline: "2025 - Present",
+    heroImage: "/placeholder.png",
+    problem: "Diaspora children grow up hearing their family's language but can't join the conversation. Textbook apps teach standard dialects — not the kitchen Tamil or household Punjabi that actually connects you to home.",
+    process: "Built a local-first iOS app with on-device AI that coaches pronunciation through articulatory mechanics — tongue placement, breath control, register awareness. Every lesson is culturally weighted, prioritizing honorifics and dialect accuracy over speed.",
+    impact: "A fully functional voice-driven language learning app that runs entirely on-device with zero cloud dependency. Teaches Eelam Tamil and Household Punjabi through real family conversation scenarios.",
+    tags: ["iOS", "On-Device AI", "Voice AI", "Language Learning"]
+  },
   civictwin: {
     title: "CivicTwin Spark (NVIDIA Hackathon)",
     role: "Developer",

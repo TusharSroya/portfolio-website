@@ -18,6 +18,7 @@ export function HomeTabs({ forceShowLabels = false }: { forceShowLabels?: boolea
       icon: FolderGit2,
       href: "", // No direct link, only dropdown trigger
       dropdown: [
+        { title: "Enkindl", href: "/portfolio/enkindl" },
         { title: "CivicTwin Spark", href: "/portfolio/civictwin" },
         { title: "NurseShield HealthTech MVP", href: "/portfolio/nurseshield" },
         { title: "ValGenesis Escalations", href: "/portfolio/valgenesis" },
@@ -68,6 +69,7 @@ export function PortfolioTabs({ forceShowLabels = false }: { forceShowLabels?: b
       icon: FolderGit2,
       href: "", // No direct link, only dropdown trigger
       dropdown: [
+        { title: "Enkindl", href: "/portfolio/enkindl" },
         { title: "CivicTwin Spark", href: "/portfolio/civictwin" },
         { title: "NurseShield HealthTech MVP", href: "/portfolio/nurseshield" },
         { title: "ValGenesis Escalations", href: "/portfolio/valgenesis" },

@@ -1,0 +1,21 @@
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 64" width="260" height="64" shape-rendering="crispEdges" role="img" aria-label="ENKINDL">
+  
+  <g transform="translate(0 6)" shape-rendering="crispEdges">
+    <rect x="14" y="12" width="32" height="2" fill="#F4B261" opacity="0.16"></rect>
+    <rect x="8" y="18" width="44" height="2" fill="#F4B261" opacity="0.10"></rect>
+    <rect x="20" y="32" width="22" height="6" fill="#C97B4A"></rect>
+    <rect x="16" y="38" width="30" height="8" fill="#C97B4A"></rect>
+    <rect x="16" y="46" width="30" height="2" fill="#A75E33"></rect>
+    <rect x="20" y="32" width="22" height="2" fill="#D08B5C"></rect>
+    <rect x="46" y="38" width="6" height="4" fill="#A75E33"></rect>
+    <rect x="46" y="42" width="4" height="2" fill="#8C4A28"></rect>
+    <rect x="29" y="24" width="4" height="8" fill="#4A2E1F"></rect>
+    <rect x="25" y="16" width="12" height="8" fill="#F4B261"></rect>
+    <rect x="27" y="8" width="8" height="8" fill="#FFE2A8"></rect>
+    <rect x="29" y="4" width="4" height="4" fill="#FFFFFF"></rect>
+  </g>
+
+  
+  <text x="60" y="46" font-family="Fraunces, &#39;Times New Roman&#39;, ui-serif, Georgia, serif" font-size="30" font-weight="600" letter-spacing="3" fill="#1F140D">ENKINDL</text>
+</svg>
