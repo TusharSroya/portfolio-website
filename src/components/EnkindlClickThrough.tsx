@@ -212,7 +212,7 @@ function StageListScreen({ onBack, onLesson }: { onBack: () => void; onLesson: (
                   <span style={{ fontFamily: "'Fraunces', Georgia, serif", fontSize: 17, color: ENK.teak, fontWeight: 500, lineHeight: 1.25 }}>{l.title}</span>
                   <span style={{ fontSize: 14, color: ENK.clay }}>{l.native}</span>
                 </div>
-                {l.done && <span style={{ width: 22, height: 22, borderRadius: "50%", background: ENK.positive, color: "#fff", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 13, fontWeight: 700 }}>&check;</span>}
+                {l.done && <span style={{ width: 22, height: 22, borderRadius: "50%", background: ENK.positive, color: "#fff", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 13, fontWeight: 700 }}>{"✓"}</span>}
               </button>
             ))}
           </div>
@@ -289,7 +289,7 @@ function ConversationScreen({ onEnd }: { onEnd: () => void }) {
       </div>
       <div style={{ display: "flex", justifyContent: "center", gap: 48, padding: "20px 20px 36px" }}>
         <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 6 }}>
-          <div style={{ width: 64, height: 64, borderRadius: "50%", background: "rgba(255,255,255,0.12)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 22, color: ENK.cream }}>&pausemark;</div>
+          <div style={{ width: 64, height: 64, borderRadius: "50%", background: "rgba(255,255,255,0.12)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 22, color: ENK.cream }}>{"⏸"}</div>
           <span style={{ fontSize: 11, color: "rgba(245,237,223,0.5)", textTransform: "uppercase" }}>Hold</span>
         </div>
         <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 6 }}>
@@ -373,11 +373,11 @@ export default function EnkindlClickThrough() {
   return (
     <div className="flex flex-col items-center gap-8">
       {/* nav pills */}
-      <div className="flex gap-2 p-1.5 rounded-full" style={{ background: "rgba(74,46,31,0.08)" }}>
+      <div className="flex gap-2 p-2 rounded-full border border-sage/20" style={{ background: "rgba(31,20,13,0.6)", backdropFilter: "blur(12px)" }}>
         {(["home", "stages", "intro", "conversation", "feedback"] as const).map(k => (
           <button key={k} onClick={() => setScreen(k)}
             className="text-[13px] font-semibold px-3.5 py-2 rounded-full border-0 cursor-pointer transition-all"
-            style={{ background: screen === k ? ENK.clay : "transparent", color: screen === k ? "#FFF8EC" : ENK.teak }}>
+            style={{ background: screen === k ? ENK.clay : "rgba(255,255,255,0.06)", color: screen === k ? "#FFF8EC" : "#F5EDDF" }}>
             {k.charAt(0).toUpperCase() + k.slice(1)}
           </button>
         ))}

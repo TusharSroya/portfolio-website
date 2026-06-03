@@ -61,7 +61,7 @@ export default function EnkindlPage() {
           <div className="relative z-10 flex flex-col items-center gap-6">
             <p className="text-xs uppercase tracking-[0.3em] font-bold text-[#F4B261]/70">The Voice Orb</p>
             <p className="text-accent-cream/50 text-center max-w-md text-base">
-              The only always-on animation in the app. A flame, not a planet. Try switching between states.
+              The only animation that never stops. It breathes at 3.2 seconds. Try switching between states.
             </p>
           </div>
           <div className="relative z-10">
@@ -78,11 +78,11 @@ export default function EnkindlPage() {
                 <Lightbulb className="w-5 h-5" /> The Vision
               </h2>
               <p className="text-xl md:text-3xl font-serif text-accent-cream leading-tight">
-                No streaks. No stickers. No shame. Just a grandmother&apos;s voice, slowed down for you.
+                A grandmother&apos;s voice, slowed down for you.
               </p>
             </div>
             <p className="text-lg md:text-2xl text-accent-cream/70 leading-relaxed font-light">
-              Enkindl teaches <span className="text-accent-cream font-medium italic">Eelam Tamil</span> and <span className="text-accent-cream font-medium italic">Household Punjabi</span> through voice conversation with on-device AI. The goal is to join a family dinner, not pass a test. Every interaction is culturally weighted, coaching you on register, honorifics, and the specific dialect your family actually speaks.
+              Enkindl teaches <span className="text-accent-cream font-medium italic">Eelam Tamil</span> and <span className="text-accent-cream font-medium italic">Household Punjabi</span> through voice conversation with on-device AI. The whole point is joining a family dinner. It coaches you on register, honorifics, and the specific dialect your family actually speaks at home.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 pt-8 md:pt-12 border-t border-sage/10">
               <div className="flex flex-col gap-4">
@@ -132,20 +132,20 @@ export default function EnkindlPage() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <div className="flex flex-col gap-4">
-              <h4 className="text-2xl font-serif text-accent-cream">Intimacy, not gamification</h4>
-              <p className="text-accent-cream/70 leading-relaxed">No XP, no leaderboards, no streaks. Enkindl uses lessons, stages, and real-life moments. Praise is for correct register and intonation, not for finishing fast. The product never shouts.</p>
+              <h4 className="text-2xl font-serif text-accent-cream">The product never shouts</h4>
+              <p className="text-accent-cream/70 leading-relaxed">There are no XP bars, no leaderboards. Enkindl uses lessons, stages, and real life moments. You get praised for sounding like your aunt, for nailing the right register. Speed is irrelevant.</p>
             </div>
             <div className="flex flex-col gap-4">
-              <h4 className="text-2xl font-serif text-accent-cream">Dialect-first, not textbook-first</h4>
-              <p className="text-accent-cream/70 leading-relaxed">Standard Tamil is not what your grandmother speaks. Enkindl teaches the Eelam form with its soft &quot;ohm&quot; for yes, the conservative Jaffna register, and the specific honorific patterns your family uses.</p>
+              <h4 className="text-2xl font-serif text-accent-cream">Your grandmother&apos;s dialect</h4>
+              <p className="text-accent-cream/70 leading-relaxed">Standard Tamil and what your family speaks at dinner are different languages in practice. Enkindl teaches the Eelam form, the soft &quot;ohm&quot; for yes, the conservative Jaffna register, the honorific patterns that actually matter when you sit down with family.</p>
             </div>
             <div className="flex flex-col gap-4">
-              <h4 className="text-2xl font-serif text-accent-cream">Local-first, zero cloud</h4>
-              <p className="text-accent-cream/70 leading-relaxed">The entire learning loop runs on-device. Voice capture, analysis, coaching, and progress tracking all happen on the iPhone with no internet required. Your voice data never leaves your phone.</p>
+              <h4 className="text-2xl font-serif text-accent-cream">Everything stays on your phone</h4>
+              <p className="text-accent-cream/70 leading-relaxed">The whole learning loop runs on the iPhone. Voice capture, analysis, coaching, progress. No internet required. Your voice data never leaves the device.</p>
             </div>
             <div className="flex flex-col gap-4">
-              <h4 className="text-2xl font-serif text-accent-cream">Articulatory coaching</h4>
-              <p className="text-accent-cream/70 leading-relaxed">Instead of &quot;wrong, try again,&quot; Enkindl tells you where to put your tongue. Curl the tip back toward the hard palate for the retroflex. Let the long vowel breathe. The coaching is physical, not abstract.</p>
+              <h4 className="text-2xl font-serif text-accent-cream">It tells you where to put your tongue</h4>
+              <p className="text-accent-cream/70 leading-relaxed">Enkindl gives you physical instructions. Curl the tip back toward the hard palate for the retroflex. Let the long vowel breathe. That&apos;s how you actually learn pronunciation, through your mouth, through repetition.</p>
             </div>
           </div>
         </section>

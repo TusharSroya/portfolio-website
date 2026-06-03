@@ -11,9 +11,9 @@ export const SelectedWorks = () => {
       slug: "enkindl",
       role: "Founder & Developer",
       icon: Flame,
-      problem: "Diaspora children grow up hearing their family's language but can't join the conversation. Textbook apps teach standard dialects, not what your family speaks.",
-      process: "Built a local-first iOS app with on-device AI that coaches pronunciation through articulatory mechanics — tongue placement, breath control, register awareness.",
-      impact: "A fully functional voice-driven language learning app running entirely on-device. Teaches Eelam Tamil and Household Punjabi through real family conversation scenarios.",
+      problem: "Diaspora children grow up hearing their family's language but can't join the conversation. Textbook apps teach standard dialects. The kitchen Tamil that connects you to home? That's missing.",
+      process: "Built a local-first iOS app with on-device AI that coaches pronunciation through articulatory mechanics: tongue placement, breath control, register awareness.",
+      impact: "A voice-driven language learning app that runs entirely on the iPhone. Teaches Eelam Tamil and Household Punjabi through real family conversation scenarios.",
     },
     {
       title: "CivicTwin Spark (NVIDIA Hackathon)",

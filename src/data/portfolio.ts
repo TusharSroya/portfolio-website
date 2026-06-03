@@ -35,9 +35,9 @@ export const portfolioData = {
     role: "Founder & Developer",
     timeline: "2025 - Present",
     heroImage: "/placeholder.png",
-    problem: "Diaspora children grow up hearing their family's language but can't join the conversation. Textbook apps teach standard dialects — not the kitchen Tamil or household Punjabi that actually connects you to home.",
-    process: "Built a local-first iOS app with on-device AI that coaches pronunciation through articulatory mechanics — tongue placement, breath control, register awareness. Every lesson is culturally weighted, prioritizing honorifics and dialect accuracy over speed.",
-    impact: "A fully functional voice-driven language learning app that runs entirely on-device with zero cloud dependency. Teaches Eelam Tamil and Household Punjabi through real family conversation scenarios.",
+    problem: "Diaspora children grow up hearing their family's language but can't join the conversation. Textbook apps teach standard dialects. The kitchen Tamil, the household Punjabi that actually connects you to home? That's missing.",
+    process: "Built a local-first iOS app with on-device AI that coaches pronunciation through articulatory mechanics: tongue placement, breath control, register awareness. Every lesson is culturally weighted, prioritizing honorifics and dialect accuracy over speed.",
+    impact: "A voice-driven language learning app that runs entirely on the iPhone. Teaches Eelam Tamil and Household Punjabi through real family conversation scenarios, with no cloud dependency.",
     tags: ["iOS", "On-Device AI", "Voice AI", "Language Learning"]
   },
   civictwin: {
