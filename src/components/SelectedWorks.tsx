@@ -1,11 +1,20 @@
 "use client";
 
-import { Stethoscope, Database, Activity, ArrowRight } from "lucide-react";
+import { Stethoscope, Database, Activity, ArrowRight, Cpu } from "lucide-react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
 export const SelectedWorks = () => {
   const projects = [
+    {
+      title: "CivicTwin Spark (NVIDIA Hackathon)",
+      slug: "civictwin",
+      role: "Developer",
+      icon: Cpu,
+      problem: "Cities lack a way to stress-test their 311 service request systems against realistic urban friction and emergency situations.",
+      process: "Built an agentic urban simulation sandbox running 10,000 generative citizen agents through a spatial-temporal digital twin of Toronto using RAPIDS cuDF, cuML, and NVIDIA NIM.",
+      impact: "Created a closed-loop simulation on the NVIDIA DGX Spark that forecasts 311 demand, triages complaints via embeddings, and generates AI morning briefings locally.",
+    },
     {
       title: "ValGenesis Technical Escalations",
       slug: "valgenesis",

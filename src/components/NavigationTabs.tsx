@@ -18,8 +18,9 @@ export function HomeTabs({ forceShowLabels = false }: { forceShowLabels?: boolea
       icon: FolderGit2,
       href: "", // No direct link, only dropdown trigger
       dropdown: [
-        { title: "ValGenesis Escalations", href: "/portfolio/valgenesis" },
+        { title: "CivicTwin Spark", href: "/portfolio/civictwin" },
         { title: "NurseShield HealthTech MVP", href: "/portfolio/nurseshield" },
+        { title: "ValGenesis Escalations", href: "/portfolio/valgenesis" },
         { title: "Attio CRM Architecture", href: "/portfolio/attio" }
       ]
     },
@@ -29,8 +30,8 @@ export function HomeTabs({ forceShowLabels = false }: { forceShowLabels?: boolea
     { title: forceShowLabels ? "Mail" : "Contact", icon: Mail, href: "#contact" },
   ] as any;
 
-  const activeTab = pathname === "/about" ? 0 : 
-                    pathname === "/resume" ? 6 : 
+  const activeTab = pathname === "/about" ? 0 :
+                    pathname === "/resume" ? 6 :
                     pathname.startsWith("/portfolio") ? 4 : null;
 
   return (
@@ -67,8 +68,9 @@ export function PortfolioTabs({ forceShowLabels = false }: { forceShowLabels?: b
       icon: FolderGit2,
       href: "", // No direct link, only dropdown trigger
       dropdown: [
-        { title: "ValGenesis Escalations", href: "/portfolio/valgenesis" },
+        { title: "CivicTwin Spark", href: "/portfolio/civictwin" },
         { title: "NurseShield HealthTech MVP", href: "/portfolio/nurseshield" },
+        { title: "ValGenesis Escalations", href: "/portfolio/valgenesis" },
         { title: "Attio CRM Architecture", href: "/portfolio/attio" }
       ]
     },
@@ -78,9 +80,9 @@ export function PortfolioTabs({ forceShowLabels = false }: { forceShowLabels?: b
     { title: forceShowLabels ? "Mail" : "Contact", icon: Mail, href: "/#contact" },
   ] as any;
 
-  const activeTab = pathname === "/" ? 0 : 
-                    pathname === "/about" ? 2 : 
-                    pathname === "/resume" ? 8 : 
+  const activeTab = pathname === "/" ? 0 :
+                    pathname === "/about" ? 2 :
+                    pathname === "/resume" ? 8 :
                     pathname.startsWith("/portfolio") ? 6 : null;
 
   return (
