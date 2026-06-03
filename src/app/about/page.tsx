@@ -3,8 +3,9 @@ import Link from "next/link";
 import { PortfolioTabs } from "@/components/NavigationTabs";
 
 export const metadata = {
-  title: 'About | Tushar Sroya',
-  description: 'Product Manager, Tech MBA, and photographer. Turning messy, real-world problems into structured, scalable solutions.',
+  title: 'About',
+  description: 'Tushar Sroya is a Product Manager, founder, and Tech MBA candidate at Schulich School of Business in Toronto. Background in HealthTech, iOS development, enterprise SaaS, and operations consulting.',
+  alternates: { canonical: '/about' },
 };
 
 export default function AboutPage() {

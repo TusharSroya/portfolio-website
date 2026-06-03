@@ -14,20 +14,41 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: 'Tushar Sroya | Tech MBA & Product Manager',
-  description: 'I build systems that scale with people. Product Manager specializing in HealthTech, operations, and technical strategy.',
+  title: {
+    default: 'Tushar Sroya | Product Manager, Founder, iOS Developer',
+    template: '%s | Tushar Sroya',
+  },
+  description: 'Product Manager and founder building Enkindl (iOS language learning) and CivicTwin Spark (NVIDIA hackathon). Tech MBA candidate at Schulich School of Business, Toronto.',
+  keywords: ['product manager', 'iOS developer', 'Tushar Sroya', 'Toronto', 'Tech MBA', 'Schulich', 'healthtech', 'on-device AI', 'language learning app', 'NVIDIA hackathon', 'portfolio'],
+  authors: [{ name: 'Tushar Sroya' }],
+  creator: 'Tushar Sroya',
+  metadataBase: new URL('https://www.tusharsroya.com'),
+  alternates: {
+    canonical: '/',
+  },
   openGraph: {
-    title: 'Tushar Sroya | Portfolio',
-    description: 'Tech MBA candidate & Product Manager. Solving messy, real-world problems with scalable systems.',
-    url: 'https://tusharsroya.info', // User's domain choice at deployment
-    siteName: 'Tushar Sroya Portfolio',
-    locale: 'en_US',
+    title: 'Tushar Sroya | Product Manager, Founder, iOS Developer',
+    description: 'Product Manager and founder building Enkindl and CivicTwin Spark. Tech MBA at Schulich, Toronto.',
+    url: 'https://www.tusharsroya.com',
+    siteName: 'Tushar Sroya',
+    locale: 'en_CA',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Tushar Sroya | Product Manager',
-    description: 'I build systems that scale with people.',
+    title: 'Tushar Sroya | Product Manager & Founder',
+    description: 'Building Enkindl (iOS language learning) and CivicTwin Spark (NVIDIA hackathon). Tech MBA at Schulich, Toronto.',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
 };
 
@@ -36,8 +57,38 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name: 'Tushar Sroya',
+    url: 'https://www.tusharsroya.com',
+    jobTitle: 'Product Manager & Founder',
+    description: 'Product Manager and founder building Enkindl (iOS language learning app) and CivicTwin Spark. Tech MBA candidate at Schulich School of Business.',
+    alumniOf: {
+      '@type': 'CollegeOrUniversity',
+      name: 'Schulich School of Business, York University',
+    },
+    knowsAbout: ['Product Management', 'iOS Development', 'On-Device AI', 'HealthTech', 'SwiftUI', 'Language Learning', 'CRM Architecture', 'NVIDIA DGX Spark'],
+    sameAs: [
+      'https://www.linkedin.com/in/tusharsroya/',
+      'https://github.com/TusharSroya',
+    ],
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'Toronto',
+      addressRegion: 'ON',
+      addressCountry: 'CA',
+    },
+  };
+
   return (
     <html lang="en" className="scroll-smooth" suppressHydrationWarning>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body
         className={`${inter.variable} ${playfair.variable} bg-background text-foreground flex flex-col min-h-screen`}
         suppressHydrationWarning
