@@ -1,0 +1,34 @@
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" shape-rendering="crispEdges" role="img" aria-label="Enkindl app icon">
+  <rect width="256" height="256" rx="56" fill="#F5EDDF"></rect>
+
+  
+  <rect x="20" y="208" width="216" height="14" fill="#8C6A4A"></rect>
+  <rect x="20" y="222" width="216" height="8" fill="#6E5132"></rect>
+
+  
+  <rect x="74" y="64" width="108" height="4" fill="#F4B261" opacity="0.10"></rect>
+  <rect x="60" y="78" width="136" height="4" fill="#F4B261" opacity="0.16"></rect>
+  <rect x="46" y="92" width="164" height="4" fill="#F4B261" opacity="0.22"></rect>
+  <rect x="38" y="106" width="180" height="4" fill="#F4B261" opacity="0.18"></rect>
+  <rect x="32" y="120" width="192" height="4" fill="#F4B261" opacity="0.12"></rect>
+
+  
+  <rect x="84" y="148" width="88" height="22" fill="#C97B4A"></rect>
+  <rect x="74" y="164" width="108" height="30" fill="#C97B4A"></rect>
+  <rect x="74" y="194" width="108" height="14" fill="#A75E33"></rect>
+  <rect x="84" y="148" width="88" height="4" fill="#D08B5C"></rect>
+
+  
+  <rect x="182" y="166" width="32" height="14" fill="#A75E33"></rect>
+  <rect x="182" y="180" width="26" height="6" fill="#8C4A28"></rect>
+
+  
+  <rect x="122" y="116" width="12" height="32" fill="#4A2E1F"></rect>
+
+  
+  <rect x="110" y="86" width="36" height="30" fill="#F4B261"></rect>
+  <rect x="116" y="60" width="24" height="26" fill="#FFE2A8"></rect>
+  <rect x="122" y="44" width="12" height="16" fill="#FFFFFF"></rect>
+  <rect x="124" y="32" width="8" height="12" fill="#FFE2A8"></rect>
+</svg>

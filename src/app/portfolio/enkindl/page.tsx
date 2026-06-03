@@ -37,12 +37,23 @@ export default function EnkindlPage() {
               <span key={tag} className="text-xs uppercase tracking-widest bg-sage/10 text-sage px-4 py-1.5 rounded-full border border-sage/20 font-medium">{tag}</span>
             ))}
           </div>
-          <h1 className="text-5xl md:text-8xl font-serif text-accent-cream leading-[1.05] tracking-tight">
-            {project.title}
-          </h1>
-          <p className="text-xl md:text-2xl text-accent-cream/60 font-light max-w-3xl" style={{ fontStyle: "italic" }}>
-            Learn the language your family speaks. Not the textbook version.
-          </p>
+          <div className="flex items-center gap-6 md:gap-10">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/enkindl/app-icon.svg"
+              alt="Enkindl app icon"
+              className="w-20 h-20 md:w-32 md:h-32 rounded-[18px] md:rounded-[28px] shadow-lg flex-shrink-0"
+              style={{ boxShadow: "0 8px 32px rgba(74,46,31,0.25), 0 2px 8px rgba(74,46,31,0.15)" }}
+            />
+            <div className="flex flex-col gap-3">
+              <h1 className="text-5xl md:text-8xl font-serif text-accent-cream leading-[1.05] tracking-tight">
+                {project.title}
+              </h1>
+              <p className="text-lg md:text-2xl text-accent-cream/60 font-light max-w-2xl" style={{ fontStyle: "italic" }}>
+                Learn the language your family speaks. Not the textbook version.
+              </p>
+            </div>
+          </div>
           <div className="flex flex-col md:flex-row gap-8 md:gap-16 mt-4 border-l-2 border-sage/30 pl-6 md:pl-8 relative">
             <div className="flex flex-col gap-2">
               <p className="text-xs uppercase tracking-widest text-sage/70 font-semibold italic">Core Role</p>
