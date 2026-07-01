@@ -19,6 +19,7 @@ export function HomeTabs({ forceShowLabels = false }: { forceShowLabels?: boolea
       href: "", // No direct link, only dropdown trigger
       dropdown: [
         { title: "Enkindl", href: "/portfolio/enkindl" },
+        { title: "Pricing Blueprint", href: "/portfolio/priceplayoffs" },
         { title: "CivicTwin Spark", href: "/portfolio/civictwin" },
         { title: "NurseShield HealthTech MVP", href: "/portfolio/nurseshield" },
         { title: "ValGenesis Escalations", href: "/portfolio/valgenesis" },
@@ -70,6 +71,7 @@ export function PortfolioTabs({ forceShowLabels = false }: { forceShowLabels?: b
       href: "", // No direct link, only dropdown trigger
       dropdown: [
         { title: "Enkindl", href: "/portfolio/enkindl" },
+        { title: "Pricing Blueprint", href: "/portfolio/priceplayoffs" },
         { title: "CivicTwin Spark", href: "/portfolio/civictwin" },
         { title: "NurseShield HealthTech MVP", href: "/portfolio/nurseshield" },
         { title: "ValGenesis Escalations", href: "/portfolio/valgenesis" },

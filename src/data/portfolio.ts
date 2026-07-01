@@ -40,6 +40,16 @@ export const portfolioData = {
     impact: "A voice-driven language learning app that runs entirely on the iPhone. Teaches Eelam Tamil and Household Punjabi through real family conversation scenarios, with no cloud dependency.",
     tags: ["iOS", "On-Device AI", "Voice AI", "Language Learning"]
   },
+  priceplayoffs: {
+    title: "Pricing Blueprint",
+    role: "Creator & Instructor",
+    timeline: "Jun 2026",
+    heroImage: "/placeholder.png",
+    problem: "Business students memorize pricing frameworks from slides but never actually set a price. They can define price elasticity on an exam. They have no idea what it feels like when a competitor shows up at 80% of your number.",
+    process: "Built a live classroom game where student teams play startup founders over three rounds. They set a launch price, respond to a competitor, then build tiered packaging. An AI calibrates the whole game to each team's product description, so the instructor does zero setup.",
+    impact: "Ran the first session with Schulich PMC students. Teams joined by QR code, competed on a projected leaderboard, and learned more about pricing tradeoffs in 20 minutes than a week of lectures.",
+    tags: ["EdTech", "Game Design", "AI Calibration", "Classroom Tool"]
+  },
   civictwin: {
     title: "CivicTwin Spark (NVIDIA Hackathon)",
     role: "Developer",

@@ -1,6 +1,6 @@
 "use client";
 
-import { Stethoscope, Database, Activity, ArrowRight, Cpu, Flame } from "lucide-react";
+import { Stethoscope, Database, Activity, ArrowRight, Cpu, Flame, Gamepad2 } from "lucide-react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
@@ -14,6 +14,15 @@ export const SelectedWorks = () => {
       problem: "Diaspora children grow up hearing their family's language but can't join the conversation. Textbook apps teach standard dialects. The kitchen Tamil that connects you to home? That's missing.",
       process: "Built a local-first iOS app with on-device AI that coaches pronunciation through articulatory mechanics: tongue placement, breath control, register awareness.",
       impact: "A voice-driven language learning app that runs entirely on the iPhone. Teaches Eelam Tamil and Household Punjabi through real family conversation scenarios.",
+    },
+    {
+      title: "Pricing Blueprint",
+      slug: "priceplayoffs",
+      role: "Creator & Instructor",
+      icon: Gamepad2,
+      problem: "Business students can define price elasticity on an exam but have no idea what it feels like when a competitor shows up at 80% of your number.",
+      process: "Built a live classroom game where student teams play startup founders over three rounds. An AI calibrates the whole market to each team's product description.",
+      impact: "Ran the first session with Schulich PMC students. Teams joined by QR code, competed on a projected leaderboard, and learned pricing tradeoffs in 20 minutes.",
     },
     {
       title: "CivicTwin Spark (NVIDIA Hackathon)",
