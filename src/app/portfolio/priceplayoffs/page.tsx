@@ -79,7 +79,7 @@ export default function PricePlayoffsPage() {
               {project.title}
             </h1>
             <p className="text-lg md:text-2xl text-accent-cream/60 font-light max-w-2xl" style={{ fontStyle: "italic" }}>
-              Students play startup founders. An AI builds their market. Three rounds, one projected leaderboard.
+              Built and taught for MKTG 6120 at Schulich, through the Product Management Club.
             </p>
           </div>
           <div className="flex flex-col md:flex-row gap-8 md:gap-16 mt-4 border-l-2 border-sage/30 pl-6 md:pl-8 relative">
@@ -92,8 +92,8 @@ export default function PricePlayoffsPage() {
               <p className="text-xl font-medium">{project.timeline}</p>
             </div>
             <div className="flex flex-col gap-2">
-              <p className="text-xs uppercase tracking-widest text-sage/70 font-semibold italic">Program</p>
-              <p className="text-xl font-medium">Schulich PMC</p>
+              <p className="text-xs uppercase tracking-widest text-sage/70 font-semibold italic">Course</p>
+              <p className="text-xl font-medium">MKTG 6120</p>
             </div>
             <div className="md:ml-auto flex items-center">
               <a
@@ -118,11 +118,11 @@ export default function PricePlayoffsPage() {
                 <Lightbulb className="w-5 h-5" /> The Vision
               </h2>
               <p className="text-xl md:text-3xl font-serif text-accent-cream leading-tight">
-                The best way to understand pricing is to set one and watch what happens.
+                I needed a better way to teach pricing. So I built one.
               </p>
             </div>
             <p className="text-lg md:text-2xl text-accent-cream/70 leading-relaxed font-light">
-              Each team describes their startup. An AI generates a full market: customer willingness to pay, margin rates, competitor names, product features. Then three rounds of live decisions where teams set prices, respond to competitors, and build tiered packaging. The leaderboard is projected. Everyone can see who&apos;s winning and why.
+              I was running the pricing module for MKTG 6120 (Fundamentals of Product Management and Marketing of SaaS/Tech Products) through the <span className="text-accent-cream font-medium italic">Schulich Product Management Club</span>. Slides and case studies weren&apos;t landing. So I built a game where each team describes their startup, an AI generates a full market around it, and I walk the room through three rounds of live pricing decisions from the Game Master dashboard. The leaderboard is projected. Everyone can see who&apos;s winning and why.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 pt-8 md:pt-12 border-t border-sage/10">
               <div className="flex flex-col gap-4">
@@ -152,7 +152,7 @@ export default function PricePlayoffsPage() {
 
         {/* Event Photos */}
         <section className="flex flex-col gap-8">
-          <h2 className="text-sm uppercase tracking-[0.3em] text-sage font-bold">First Session at Schulich</h2>
+          <h2 className="text-sm uppercase tracking-[0.3em] text-sage font-bold">Running MKTG 6120 at Schulich</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="bg-sage/5 border border-sage/20 rounded-3xl p-4 md:p-6 overflow-hidden group">
               <img
@@ -160,7 +160,7 @@ export default function PricePlayoffsPage() {
                 alt="Tushar presenting the Pricing Blueprint game to Schulich PMC students with the Game Master dashboard projected"
                 className="w-full h-auto object-cover rounded-2xl shadow-xl border border-sage/10"
               />
-              <p className="text-sm text-accent-cream/50 mt-4 text-center">Running the session as Game Master with the lobby projected to the room</p>
+              <p className="text-sm text-accent-cream/50 mt-4 text-center">Teaching the pricing module, Game Master dashboard projected to the class</p>
             </div>
             <div className="bg-sage/5 border border-sage/20 rounded-3xl p-4 md:p-6 overflow-hidden group">
               <img

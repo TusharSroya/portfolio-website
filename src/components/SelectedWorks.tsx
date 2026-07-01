@@ -18,11 +18,11 @@ export const SelectedWorks = () => {
     {
       title: "Pricing Blueprint",
       slug: "priceplayoffs",
-      role: "Creator & Instructor",
+      role: "Creator & Instructor, Schulich PMC",
       icon: Gamepad2,
-      problem: "Business students can define price elasticity on an exam but have no idea what it feels like when a competitor shows up at 80% of your number.",
-      process: "Built a live classroom game where student teams play startup founders over three rounds. An AI calibrates the whole market to each team's product description.",
-      impact: "Ran the first session with Schulich PMC students. Teams joined by QR code, competed on a projected leaderboard, and learned pricing tradeoffs in 20 minutes.",
+      problem: "I was teaching pricing strategy to MKTG 6120 through the Schulich Product Management Club. Slides weren't cutting it. Students could define price elasticity but had no feel for real pricing decisions.",
+      process: "Built a live game and ran it in class. Teams described their startup, an AI generated a market, and I walked the room through three rounds from the Game Master dashboard.",
+      impact: "The class got competitive fast. Teams joined by QR code, argued over pricing in real time, and debriefed around a projected leaderboard. 20 minutes covered more than the lecture it replaced.",
     },
     {
       title: "CivicTwin Spark (NVIDIA Hackathon)",

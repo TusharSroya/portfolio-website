@@ -42,12 +42,12 @@ export const portfolioData = {
   },
   priceplayoffs: {
     title: "Pricing Blueprint",
-    role: "Creator & Instructor",
+    role: "Creator & Instructor, Schulich PMC",
     timeline: "Jun 2026",
     heroImage: "/placeholder.png",
-    problem: "Business students memorize pricing frameworks from slides but never actually set a price. They can define price elasticity on an exam. They have no idea what it feels like when a competitor shows up at 80% of your number.",
-    process: "Built a live classroom game where student teams play startup founders over three rounds. They set a launch price, respond to a competitor, then build tiered packaging. An AI calibrates the whole game to each team's product description, so the instructor does zero setup.",
-    impact: "Ran the first session with Schulich PMC students. Teams joined by QR code, competed on a projected leaderboard, and learned more about pricing tradeoffs in 20 minutes than a week of lectures.",
+    problem: "I was teaching pricing strategy to MKTG 6120 (Fundamentals of Product Management and Marketing of SaaS/Tech Products) through the Schulich Product Management Club. Slides weren't cutting it. Students could define price elasticity on an exam but had no feel for what happens when a competitor undercuts you.",
+    process: "Built a live game and ran it in class. Teams described their startup, an AI generated a full market for each one, and I walked the room through three rounds: setting a launch price, responding to a competitor, and building tiered packaging. I projected the Game Master dashboard and controlled the pacing.",
+    impact: "The class got competitive fast. Teams joined by QR code, argued over pricing decisions in real time, and debriefed around a projected leaderboard. 20 minutes of gameplay covered more ground than the pricing lecture it replaced.",
     tags: ["EdTech", "Game Design", "AI Calibration", "Classroom Tool"]
   },
   civictwin: {
