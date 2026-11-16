@@ -4,7 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { ArrowLeft, ArrowRight, Check, Loader2 } from "lucide-react";
 import { PixelCat } from "@/components/PixelCat";
-import { FEATURES, PLATFORMS, USAGE, PAY, type FeatureId } from "@/lib/feedback";
+import { FEATURES, PLATFORMS, USAGE, PAY, type FeatureId } from "@/lib/feedbackSchema";
 
 type Form = {
   platform: string;

@@ -1,12 +1,15 @@
 import { NextResponse } from "next/server";
-import { parseFeedback, saveFeedback, storeConfigured } from "@/lib/feedback";
+import { loadFeedback, parseFeedback, saveFeedback, storeConfigured } from "@/lib/feedback";
 
 // Status check: is storage connected? Reveals nothing else.
 export async function GET() {
-  if (storeConfigured()) return NextResponse.json({ storage: "connected" });
-  // Names only (never values), to diagnose a mismatched integration prefix.
-  const hints = Object.keys(process.env).filter((k) => /KV|REDIS|UPSTASH|STORAGE|REST_API/.test(k));
-  return NextResponse.json({ storage: "not_connected", envNames: hints });
+  if (!storeConfigured()) return NextResponse.json({ storage: "not_connected" });
+  try {
+    const count = (await loadFeedback()).length;
+    return NextResponse.json({ storage: "connected", responses: count });
+  } catch {
+    return NextResponse.json({ storage: "unreachable" }, { status: 502 });
+  }
 }
 
 export async function POST(req: Request) {
