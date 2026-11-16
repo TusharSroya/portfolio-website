@@ -3,6 +3,7 @@ import { AnimatedRibbon } from "@/components/AnimatedRibbon";
 import { Capabilities } from "@/components/Capabilities";
 import { SelectedWorks } from "@/components/SelectedWorks";
 import { Contact } from "@/components/Contact";
+import { AboutIntro, Journey, Photography } from "@/components/AboutSections";
 import { ArrowRight } from "lucide-react";
 import { HomeTabs } from "@/components/NavigationTabs";
 import { LandingScreen } from "@/components/LandingScreen";
@@ -41,7 +42,7 @@ export default function Home() {
                 I build systems that <span className="italic text-sage/90">scale with people.</span>
               </h1>
               <p className="text-lg md:text-xl text-accent-cream/80 max-w-2xl font-light leading-relaxed mb-12">
-                Aspiring Product Manager turning messy, real-world problems into structured, scalable solutions. Currently focused on building HealthTech products that make people&apos;s lives easier, not harder.
+                Product Manager turning messy, real-world problems into structured, scalable solutions. Right now I&apos;m building Pomocat in public, alongside HealthTech products that make people&apos;s lives easier, not harder.
               </p>
 
               <div className="flex items-center gap-8">
@@ -65,6 +66,7 @@ export default function Home() {
       </div>
 
       {/* Subsequent sections flow seamlessly without border separation */}
+      <AboutIntro />
       <Capabilities />
 
       {/* Decorative Ribbon Transition */}
@@ -73,6 +75,8 @@ export default function Home() {
       </div>
 
       <SelectedWorks />
+      <Journey />
+      <Photography />
       
       {/* Decorative Ribbon Transition */}
       <div className="w-full h-64 md:h-96 relative overflow-hidden bg-background">

@@ -7,7 +7,7 @@ import { ParticleMorphTransition } from "./ParticleMorphTransition";
 export function LandingScreen() {
   const [visible, setVisible] = useState(false);
   const [exiting, setExiting] = useState(false);
-  const [scrollToWork, setScrollToWork] = useState(false);
+  const [scrollTarget, setScrollTarget] = useState<"about" | "work" | null>(null);
 
   useEffect(() => {
     const hasVisited = sessionStorage.getItem("has_visited");
@@ -18,21 +18,22 @@ export function LandingScreen() {
   }, []);
 
   const handleLearn = () => {
+    setScrollTarget("about");
     setExiting(true);
   };
 
   const handleEnter = () => {
-    setScrollToWork(true);
+    setScrollTarget("work");
     setExiting(true);
   };
 
   // Called by ParticleMorphTransition when animation is complete
   const handleMorphComplete = useCallback(() => {
     setVisible(false);
-    if (scrollToWork) {
-      document.getElementById("work")?.scrollIntoView({ behavior: "smooth" });
+    if (scrollTarget) {
+      document.getElementById(scrollTarget)?.scrollIntoView({ behavior: "smooth" });
     }
-  }, [scrollToWork]);
+  }, [scrollTarget]);
 
   if (!visible) return null;
 

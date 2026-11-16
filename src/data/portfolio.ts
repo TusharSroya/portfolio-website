@@ -1,4 +1,15 @@
 export const portfolioData = {
+  pomocat: {
+    title: "Pomocat",
+    role: "Founder, Designer & Developer",
+    timeline: "Nov 2026 - Present",
+    heroImage: "/pomocat-guard-cat.png",
+    video: "/pomocat-guard-cat.png",
+    problem: "Pomodoro timers are easy to ignore. You skip the break, open YouTube \"for a minute\", and the timer keeps counting like nothing happened. Nothing makes the rules feel real, so focus sessions quietly fall apart.",
+    process: "Built a native macOS menu-bar app in Swift and a Windows version in Electron. A pixel cat runs along a progress bar wrapped around the MacBook notch. A music tray handles film scores, Spotify, Apple Music and YouTube. A guard cat watches for distracting apps and sites, escalates through four levels when slips start costing the round, and XP, levels and unlockable pets reward real breaks. I shipped installers to early testers and changed the product based on what they reported.",
+    impact: "In testing with early users on both platforms. A Windows tester's report led to a force-quit screen, an emergency pass that costs XP, and a music picker that stays open. Feedback is collected and published live on the Pomocat Wall.",
+    tags: ["macOS & Windows", "Behavior Design", "Gamification", "Building in Public"]
+  },
   nurseshield: {
     title: "NurseShield HealthTech MVP",
     role: "Product Manager & Technical Lead",

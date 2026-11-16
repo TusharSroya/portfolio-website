@@ -70,144 +70,187 @@ export default function ResumePage() {
         {/* Professional Summary */}
         <Section title="Professional Summary">
           <p className="text-accent-cream/80 font-light leading-relaxed">
-            Aspiring Product Manager who enjoys turning messy, real-world problems into structured, scalable solutions. With 3+ years in SaaS engineering, I&apos;ve worked at the intersection of users, systems, and complexity and recently built a HealthTech MVP after uncovering how broken clinical workflows really are. Currently pursuing a Tech MBA at Schulich, focused on building products that make people&apos;s lives easier (not harder).
+            Product Manager who turns messy, real-world problems into structured, scalable products. 3+ years in enterprise SaaS engineering,
+            a Tech MBA from Schulich, and a habit of shipping: an iOS language app, a macOS and Windows focus app built in public, and CRM systems
+            for startup founders. I go deep on the user problem, then build until the fix is obvious.
           </p>
         </Section>
 
-        {/* Education */}
-        <Section title="Education">
-          <div className="flex flex-col gap-1">
-            <div className="flex justify-between items-baseline flex-wrap gap-2">
-              <h3 className="text-accent-cream font-semibold">MBA in Technology Leadership</h3>
-              <span className="text-sage text-sm tracking-widest">2025 – 2026</span>
-            </div>
-            <p className="text-accent-cream/60 text-sm">Schulich School of Business, Toronto, ON</p>
-          </div>
+        {/* Experience */}
+        <Section title="Experience">
+          {EXPERIENCE.map((job) => (
+            <Entry key={job.org} {...job} />
+          ))}
         </Section>
 
         {/* Projects */}
         <Section title="Projects">
-          {/* Attio */}
-          <div className="flex flex-col gap-4 pb-8 border-b border-sage/10">
-            <div className="flex justify-between items-baseline flex-wrap gap-2">
-              <h3 className="text-accent-cream font-semibold">Technology and Operations Consultant</h3>
-              <span className="text-sage text-sm tracking-widest">2026 – Present</span>
-            </div>
-            <p className="text-accent-cream/60 text-sm uppercase tracking-widest">Attio CRM Systems · Schulich Startups / YSpace</p>
-            <ul className="flex flex-col gap-2.5 pl-4 border-l border-sage/20">
-              {[
-                "Designing and implementing a custom Attio CRM architecture and improved relationship management across 4+ startups, enabling more structured decision-making and reporting.",
-                "Road mapped stakeholder workflows into scalable CRM data models through user research to support founder pipelines, sponsor management, sales and reporting.",
-                "Built structured CRM pipelines in Attio to track founder, sponsor, and partner journeys, enabling clearer visibility into engagement stages and improving decision-making across Schulich Startups programs.",
-              ].map((item, i) => (
-                <li key={i} className="text-accent-cream/75 font-light leading-relaxed text-sm flex gap-2">
-                  <span className="text-sage mt-1.5 flex-shrink-0">•</span>
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* NurseShield */}
-          <div className="flex flex-col gap-4">
-            <div className="flex justify-between items-baseline flex-wrap gap-2">
-              <a
-                href="/portfolio/nurseshield"
-                className="text-sage font-semibold hover:text-accent-cream transition-colors flex items-center gap-1.5"
-              >
-                NurseShield, HealthTech Workforce Platform (MVP)
-                <ExternalLink className="w-3.5 h-3.5" />
-              </a>
-              <span className="text-sage text-sm tracking-widest">2026 – Present</span>
-            </div>
-            <ul className="flex flex-col gap-2.5 pl-4 border-l border-sage/20">
-              {[
-                "Validated nursing workflow challenges through research (600–800 entries/shift; 79% report inefficiencies).",
-                "Built MVP to reduce documentation load and improve staffing visibility.",
-              ].map((item, i) => (
-                <li key={i} className="text-accent-cream/75 font-light leading-relaxed text-sm flex gap-2">
-                  <span className="text-sage mt-1.5 flex-shrink-0">•</span>
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </div>
+          {PROJECTS.map((p) => (
+            <Entry key={p.title} {...p} />
+          ))}
         </Section>
 
-        {/* Relevant Experience */}
-        <Section title="Relevant Experience">
+        {/* Education */}
+        <Section title="Education">
+          {EDUCATION.map((e) => (
+            <Entry key={e.title} {...e} />
+          ))}
+        </Section>
+
+        {/* Leadership */}
+        <Section title="Leadership & Community">
+          <Entry
+            title="Director of Technology and Operations"
+            org="Schulich Product Management Club"
+            when="2025 – Present"
+            bullets={[
+              "Led cross-functional coordination of events, branding, and marketing for a new Product Management club, working with student teams and external partners to grow it into one of Schulich's standout organizations.",
+              "Created and taught Pricing Blueprint, a live pricing-strategy game run in class for MKTG 6120.",
+            ]}
+          />
+        </Section>
+
+        {/* Skills */}
+        <Section title="Skills & Certifications">
           <div className="flex flex-col gap-3">
-            <div className="flex justify-between items-baseline flex-wrap gap-2">
-              <h3 className="text-accent-cream font-semibold">Application Engineer</h3>
-              <span className="text-sage text-sm tracking-widest">2022 – 2025</span>
-            </div>
-            <p className="text-accent-cream/60 text-sm uppercase tracking-widest">ValGenesis · Toronto, ON</p>
-            <ul className="flex flex-col gap-2.5 pl-4 border-l border-sage/20">
-              {[
-                "Delivered 700+ technical solutions for enterprise SaaS clients with 98% satisfaction and zero escalations.",
-                "Led 12+ international training sessions to improve internal and external knowledge sharing and technical adoption.",
-                "Reduced open tickets for a critical client from 50+ to just 4 tickets within 2 months using agile workflows, serving as an executive spokesperson for the company.",
-              ].map((item, i) => (
-                <li key={i} className="text-accent-cream/75 font-light leading-relaxed text-sm flex gap-2">
-                  <span className="text-sage mt-1.5 flex-shrink-0">•</span>
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </div>
-        </Section>
-
-        {/* Volunteer / Extracurriculars */}
-        <Section title="Volunteer / Extracurriculars">
-          <div className="flex flex-col gap-3">
-            <div className="flex justify-between items-baseline flex-wrap gap-2">
-              <h3 className="text-accent-cream font-semibold">Director of Technology and Operations</h3>
-              <span className="text-sage text-sm tracking-widest">2025 – Present</span>
-            </div>
-            <p className="text-accent-cream/60 text-sm uppercase tracking-widest">Schulich Product Management Club</p>
-            <ul className="flex flex-col gap-2.5 pl-4 border-l border-sage/20">
-              <li className="text-accent-cream/75 font-light leading-relaxed text-sm flex gap-2">
-                <span className="text-sage mt-1.5 flex-shrink-0">•</span>
-                Managed technical operations and logistics for Product Management events including branding and marketing execution, growing from a new club to a standout club at Schulich School of Business.
-              </li>
-            </ul>
-          </div>
-        </Section>
-
-        {/* Tools & Technologies */}
-        <Section title="Tools & Technologies">
-          <div className="flex flex-col gap-4">
-            {[
-              {
-                category: "UI/UX + Development",
-                items: "Adobe XD, Sketch, Figma, Canva, Illustrator, Photoshop, HTML/CSS, Java, Python, Lovable, Claude, OpenAI Atlas"
-              },
-              {
-                category: "Data Analytics + Operations",
-                items: "ServiceNow, Jira, Confluence, Asana, Attio, Smartsheet, Google Analytics, Tableau, Excel, SQL"
-              },
-              {
-                category: "Fintech & Payment Tools",
-                items: "Stripe, Google Merchant Center, Google Ads (familiar)"
-              }
-            ].map(({ category, items }) => (
-              <div key={category}>
-                <span className="text-accent-cream font-medium text-sm">{category} </span>
-                <span className="text-accent-cream/65 font-light text-sm">, {items}</span>
-              </div>
+            {SKILLS.map(({ category, items }) => (
+              <p key={category} className="text-sm leading-relaxed">
+                <span className="text-accent-cream font-medium">{category}: </span>
+                <span className="text-accent-cream/65 font-light">{items}</span>
+              </p>
             ))}
           </div>
         </Section>
 
-        {/* Certifications */}
-        <Section title="Certifications">
-          <p className="text-accent-cream/75 font-light text-sm">
-            Professional Scrum Master 1 (PSM 1), COMPTIA A+
-          </p>
-        </Section>
-
       </article>
     </main>
+  );
+}
+
+type EntryProps = { title: string; org?: string; when: string; bullets: string[]; href?: string };
+
+const EXPERIENCE: EntryProps[] = [
+  {
+    title: "Production Operations & Strategy Intern",
+    org: "SP Productions · Toronto, ON",
+    when: "Summer 2026",
+    bullets: [
+      "Designed a 4-stage automation pipeline and application skeletons, building the core architecture that connects script ingestion, AI summarization, teaser creation, and distributor outreach for an influencer-driven film marketing platform.",
+      "Built a 0-to-1 product strategy and roadmap as entrepreneur-in-residence from market and competitive research, defining requirements and priorities across squads to shape go-to-market positioning for a new entertainment venture.",
+      "Supported the CEO with executive-level coordination across the organization, covering scheduling, communications, and cross-functional operations alongside analyst and build work.",
+    ],
+  },
+  {
+    title: "Product Consultant",
+    org: "Attio CRM Systems · Schulich Startups / YSpace",
+    when: "2026 – Present",
+    href: "/portfolio/attio",
+    bullets: [
+      "Designed and implemented custom Attio CRM systems with 4+ startup founders, improving how teams track customer and partner relationships and giving better sales pipeline visibility.",
+      "Translated stakeholder needs into scalable CRM data models that support reporting, pipeline tracking, and operational decisions.",
+      "Mapped internal user journeys through product walkthroughs and turned user feedback into actionable product insights.",
+      "Built pipelines tracking founder, sponsor, and partner engagement, giving program leads clearer visibility into relationship health.",
+    ],
+  },
+  {
+    title: "Application Engineer",
+    org: "ValGenesis · Toronto, ON",
+    when: "2022 – 2025",
+    href: "/portfolio/valgenesis",
+    bullets: [
+      "Delivered 700+ tailored solutions for enterprise clients, raising product adoption and customer satisfaction by identifying gaps.",
+      "Led 12+ international client training sessions across global teams, strengthening product understanding and long-term relationships.",
+      "Reduced a critical account's open issues from 50+ to 4 within 2 months as executive spokesperson, through process analysis and targeted improvements.",
+    ],
+  },
+];
+
+const PROJECTS: EntryProps[] = [
+  {
+    title: "Pomocat · macOS & Windows Focus App",
+    when: "Nov 2026 – Present",
+    href: "/portfolio/pomocat",
+    bullets: [
+      "Designed and built a pomodoro app with a native Swift menu-bar version for macOS and an Electron version for Windows, featuring a pixel-cat progress bar around the MacBook notch, a focus music tray, and XP, levels and unlockable pets.",
+      "Built a guard cat that detects distracting apps and sites and escalates across four levels as slips cost the round, with a first-run setup guide that walks users through permissions.",
+      "Shipped installers to early testers and acted on their feedback, adding a force-quit screen, an XP-costing emergency pass, and a keep-open music picker; feedback is collected and published live on the Pomocat Wall.",
+    ],
+  },
+  {
+    title: "Enkindl · Language Learning iOS App",
+    when: "2026 – Present",
+    href: "/portfolio/enkindl",
+    bullets: [
+      "Designed a 4-axis pronunciation scoring engine weighted for cultural accuracy, built 59 phoneme animations by hand, and shipped 60 lessons that score you on how you'd sound at your family's dinner table.",
+    ],
+  },
+  {
+    title: "NurseShield · HealthTech Workforce Platform (MVP)",
+    when: "2026",
+    href: "/portfolio/nurseshield",
+    bullets: [
+      "Validated nursing workflow pain through user research (600–800 data entries per shift; 79% report inefficiencies) and built an MVP giving charge nurses visibility into staff workload and stress.",
+    ],
+  },
+  {
+    title: "CivicTwin Spark · NVIDIA Hackathon",
+    when: "2026",
+    href: "/portfolio/civictwin",
+    bullets: [
+      "Built an agentic simulation of 10,000 citizen agents across a digital twin of Toronto on an NVIDIA DGX Spark to forecast 311 demand and triage complaints with embeddings.",
+    ],
+  },
+];
+
+const EDUCATION: EntryProps[] = [
+  {
+    title: "MBA in Technology Leadership",
+    org: "Schulich School of Business · Toronto, ON",
+    when: "2025 – 2026",
+    bullets: ["GPA 3.7/4.0 · Dean's Entrance Scholarship"],
+  },
+  {
+    title: "Bachelor's in Information Technology",
+    org: "York University · Toronto, ON",
+    when: "2017 – 2021",
+    bullets: [
+      "Dean's Award for Research Excellence (DARE): built a data analysis application that scraped and organized 500+ company financial records from CapitalIQ to surface investment insights.",
+    ],
+  },
+];
+
+const SKILLS = [
+  { category: "Product", items: "User research, roadmapping, requirements, prioritization, go-to-market, Jira, Confluence, Asana, Attio, Smartsheet, ServiceNow" },
+  { category: "Data & analysis", items: "Excel, SQL, Tableau, Google Analytics" },
+  { category: "Building", items: "Swift, Electron, Next.js, HTML/CSS, Python, Claude Code, Google Antigravity, Visual Studio" },
+  { category: "Growth & payments", items: "Stripe, Google Merchant Center, Google Ads" },
+  { category: "Certifications", items: "Professional Scrum Master I (PSM I), CompTIA A+" },
+];
+
+function Entry({ title, org, when, bullets, href }: EntryProps) {
+  return (
+    <div className="flex flex-col gap-3 pb-8 border-b border-sage/10 last:border-0 last:pb-0">
+      <div className="flex justify-between items-baseline flex-wrap gap-2">
+        {href ? (
+          <Link href={href} className="text-accent-cream font-semibold hover:text-sage transition-colors flex items-center gap-1.5">
+            {title}
+            <ExternalLink className="no-print w-3.5 h-3.5 text-sage" />
+          </Link>
+        ) : (
+          <h3 className="text-accent-cream font-semibold">{title}</h3>
+        )}
+        <span className="text-sage text-sm tracking-widest">{when}</span>
+      </div>
+      {org && <p className="text-accent-cream/60 text-sm uppercase tracking-widest">{org}</p>}
+      <ul className="flex flex-col gap-2.5 pl-4 border-l border-sage/20">
+        {bullets.map((item, i) => (
+          <li key={i} className="text-accent-cream/75 font-light leading-relaxed text-sm flex gap-2">
+            <span className="text-sage mt-1.5 flex-shrink-0">•</span>
+            {item}
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 }
 

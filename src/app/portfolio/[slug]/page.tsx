@@ -118,6 +118,20 @@ export default async function PortfolioPage({ params }: PageProps) {
 
         {slug === "nurseshield" && <NurseShieldPostMortem />}
 
+        {slug === "pomocat" && (
+          <section className="border border-sage/20 rounded-3xl p-8 md:p-12 flex flex-col md:flex-row md:items-center justify-between gap-8 bg-sage/5">
+            <div className="flex flex-col gap-3 max-w-xl">
+              <p className="text-xs uppercase tracking-[0.2em] text-sage font-semibold">Building in public</p>
+              <h2 className="text-3xl md:text-4xl font-serif">See what users think, live</h2>
+              <p className="text-accent-cream/75 font-light">Recommendation score, feature ratings, quotes, and a log of what changed because of user feedback.</p>
+            </div>
+            <div className="flex flex-col sm:flex-row md:flex-col gap-3 shrink-0">
+              <Link href="/feedback/pomocat/results" className="text-center bg-accent-cream text-primary-green px-6 py-3 rounded-full font-semibold hover:brightness-110">Open the Pomocat Wall</Link>
+              <Link href="/feedback/pomocat" className="text-center border border-sage/30 px-6 py-3 rounded-full font-semibold hover:bg-sage/10">Give feedback</Link>
+            </div>
+          </section>
+        )}
+
       </article>
     </main>
   );

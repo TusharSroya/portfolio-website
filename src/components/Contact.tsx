@@ -1,4 +1,5 @@
 import { Mail, Linkedin, QrCode } from "lucide-react";
+import Link from "next/link";
 
 export const Contact = () => {
   return (
@@ -34,6 +35,13 @@ export const Contact = () => {
             LinkedIn Profile
           </a>
         </div>
+
+        <Link
+          href="/feedback/pomocat/results"
+          className="mt-10 md:mt-14 text-sm text-sage hover:text-accent-cream transition-colors underline-offset-4 hover:underline"
+        >
+          Building in public: see what users think of Pomocat →
+        </Link>
 
         {/* Footer / Business Card Integration */}
         <div className="mt-20 md:mt-40 pt-8 md:pt-12 border-t border-sage/10 w-full flex flex-col md:flex-row justify-between items-center text-accent-cream/50 text-sm tracking-widest uppercase gap-6 md:gap-0">

@@ -9,7 +9,7 @@ export function HomeTabs({ forceShowLabels = false }: { forceShowLabels?: boolea
   const pathname = usePathname();
 
   const navTabs = [
-    { title: "About", icon: User, href: "/about" },
+    { title: "About", icon: User, href: "#about" },
     { type: "separator" },
     { title: forceShowLabels ? "Tools" : "Capabilities", icon: Wrench, href: "#capabilities" },
     { type: "separator" },
@@ -18,6 +18,7 @@ export function HomeTabs({ forceShowLabels = false }: { forceShowLabels?: boolea
       icon: FolderGit2,
       href: "", // No direct link, only dropdown trigger
       dropdown: [
+        { title: "Pomocat", href: "/portfolio/pomocat" },
         { title: "Enkindl", href: "/portfolio/enkindl" },
         { title: "Pricing Blueprint", href: "/portfolio/priceplayoffs" },
         { title: "CivicTwin Spark", href: "/portfolio/civictwin" },
@@ -61,7 +62,7 @@ export function PortfolioTabs({ forceShowLabels = false }: { forceShowLabels?: b
   const navTabs = [
     { title: "Home", icon: Home, href: "/" },
     { type: "separator" },
-    { title: "About", icon: User, href: "/about" },
+    { title: "About", icon: User, href: "/#about" },
     { type: "separator" },
     { title: forceShowLabels ? "Tools" : "Capabilities", icon: Wrench, href: "/#capabilities" },
     { type: "separator" },
@@ -70,6 +71,7 @@ export function PortfolioTabs({ forceShowLabels = false }: { forceShowLabels?: b
       icon: FolderGit2,
       href: "", // No direct link, only dropdown trigger
       dropdown: [
+        { title: "Pomocat", href: "/portfolio/pomocat" },
         { title: "Enkindl", href: "/portfolio/enkindl" },
         { title: "Pricing Blueprint", href: "/portfolio/priceplayoffs" },
         { title: "CivicTwin Spark", href: "/portfolio/civictwin" },

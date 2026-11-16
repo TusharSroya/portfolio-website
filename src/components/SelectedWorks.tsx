@@ -1,11 +1,21 @@
 "use client";
 
-import { Stethoscope, Database, Activity, ArrowRight, Cpu, Flame, Gamepad2 } from "lucide-react";
+import { Stethoscope, Database, Activity, ArrowRight, Cpu, Flame, Gamepad2, Timer } from "lucide-react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
 export const SelectedWorks = () => {
-  const projects = [
+  const projects: { title: string; slug: string; role: string; icon: typeof Timer; problem: string; process: string; impact: string; now?: boolean }[] = [
+    {
+      title: "Pomocat",
+      slug: "pomocat",
+      role: "Founder, Designer & Developer",
+      icon: Timer,
+      now: true,
+      problem: "Pomodoro timers are easy to ignore. You skip the break, open YouTube \"for a minute\", and the timer keeps counting like nothing happened.",
+      process: "Built a macOS and Windows focus app where a pixel cat runs around the MacBook notch, plays your focus music, and sits on distracting apps. The more you slip, the more dramatic it gets.",
+      impact: "In testing with early users and built in public. Tester feedback has already shaped the product, and live survey results are published on the Pomocat Wall.",
+    },
     {
       title: "Enkindl",
       slug: "enkindl",
@@ -95,6 +105,11 @@ export const SelectedWorks = () => {
                  <div className="w-14 h-14 bg-sage/10 rounded-full flex items-center justify-center text-sage mb-2 md:mb-4">
                    <project.icon className="w-7 h-7" strokeWidth={1.5} />
                  </div>
+                 {project.now && (
+                   <span className="self-start flex items-center gap-2 text-[10px] md:text-xs uppercase tracking-[0.2em] font-semibold text-accent-cream border border-sage/30 rounded-full px-3 py-1">
+                     <span className="w-1.5 h-1.5 rounded-full bg-[#E59A4C] animate-pulse motion-reduce:animate-none" /> Building now
+                   </span>
+                 )}
                  <h4 className="text-2xl md:text-3xl font-serif leading-tight">{project.title}</h4>
                  <p className="text-sage uppercase tracking-wider text-xs md:text-sm font-semibold mt-1 md:mt-2">{project.role}</p>
               </div>
@@ -114,7 +129,7 @@ export const SelectedWorks = () => {
                   <p className="text-lg font-light leading-relaxed text-accent-cream">{project.impact}</p>
                 </div>
                 
-                <div className="mt-4 pt-8 border-t border-sage/10">
+                <div className="mt-4 pt-8 border-t border-sage/10 flex flex-wrap gap-x-10 gap-y-4">
                   <Link 
                     href={`/portfolio/${project.slug}`}
                     className="group inline-flex items-center gap-2 text-sage uppercase tracking-widest text-sm font-semibold hover:text-accent-cream transition-colors"
@@ -122,6 +137,15 @@ export const SelectedWorks = () => {
                     Read Full Case Study
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </Link>
+                  {project.now && (
+                    <Link
+                      href="/feedback/pomocat/results"
+                      className="group inline-flex items-center gap-2 text-sage uppercase tracking-widest text-sm font-semibold hover:text-accent-cream transition-colors"
+                    >
+                      See Live Feedback
+                      <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    </Link>
+                  )}
                 </div>
               </div>
             </motion.div>
