@@ -107,6 +107,14 @@ export function Journey() {
       accent: "product",
     },
     {
+      year: "Sep 2026 – Present",
+      icon: Briefcase,
+      role: "Product Management Intern",
+      org: "EvonSys · TracEI",
+      desc: "Working across product and go-to-market for TracEI, a payments investigation product for banks. Built a Power Automate system that keeps the sales team's lead tracker current on its own, and building an outreach tool for EU prospects. Started as a Business Analyst Intern and moved into product within two weeks.",
+      accent: "product",
+    },
+    {
       year: "Now",
       icon: Timer,
       role: "Founder, Designer & Developer",

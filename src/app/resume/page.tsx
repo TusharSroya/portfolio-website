@@ -70,9 +70,10 @@ export default function ResumePage() {
         {/* Professional Summary */}
         <Section title="Professional Summary">
           <p className="text-accent-cream/80 font-light leading-relaxed">
-            Product Manager who turns messy, real-world problems into structured, scalable products. 3+ years in enterprise SaaS engineering,
-            a Tech MBA from Schulich, and a habit of shipping: an iOS language app, a macOS and Windows focus app built in public, and CRM systems
-            for startup founders. I go deep on the user problem, then build until the fix is obvious.
+            Product Manager who turns messy, real-world problems into structured, scalable products. Currently a Product Management Intern at
+            EvonSys on TracEI, a payments investigation product for banks. 3+ years in enterprise SaaS engineering, a Tech MBA from Schulich, and a
+            habit of shipping: an iOS language app, a macOS and Windows focus app built in public, and CRM systems for startup founders. I go deep on
+            the user problem, then build until the fix is obvious.
           </p>
         </Section>
 
@@ -130,6 +131,17 @@ export default function ResumePage() {
 type EntryProps = { title: string; org?: string; when: string; bullets: string[]; href?: string };
 
 const EXPERIENCE: EntryProps[] = [
+  {
+    title: "Product Management Intern",
+    org: "EvonSys · Toronto, ON",
+    when: "Sep 2026 – Present",
+    bullets: [
+      "Work across product and go-to-market for TracEI, EvonSys's payments investigation product for banks, at a Pega partner delivering low-code digital transformation. Moved from Business Analyst Intern to Product Management Intern within the first two weeks.",
+      "Built a 10-flow Power Automate and Office Scripts system that keeps the TracEI leads tracker current from email and calendar activity: it logs every touch, moves leads through stages on reply keywords, flags bounces and overdue follow-ups, and sends a weekly digest, replacing manual tracker updates. Documented and handed it off to run on the product lead's own account.",
+      "Building an EU Pega prospect outreach tool that consolidates qualified prospects into one source and generates personalized outreach, opening a repeatable pipeline into a market the Canadian office didn't cover.",
+      "Researched and planned the 2027 payments industry events calendar and a promotion plan for the TracEI white paper to guide where the team shows up and who it reaches.",
+    ],
+  },
   {
     title: "Production Operations & Strategy Intern",
     org: "SP Productions · Toronto, ON",
