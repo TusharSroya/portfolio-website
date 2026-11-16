@@ -36,9 +36,18 @@ export type FeedbackEntry = {
 
 const KEY = "pomocat:feedback";
 
+// The Vercel integration may add a custom prefix (e.g. STORAGE_KV_REST_API_URL), so match on the suffix.
+function env(...suffixes: string[]) {
+  for (const suffix of suffixes) {
+    const key = Object.keys(process.env).find((k) => k === suffix || k.endsWith("_" + suffix));
+    if (key && process.env[key]) return process.env[key];
+  }
+  return undefined;
+}
+
 function creds() {
-  const url = process.env.KV_REST_API_URL || process.env.UPSTASH_REDIS_REST_URL;
-  const token = process.env.KV_REST_API_TOKEN || process.env.UPSTASH_REDIS_REST_TOKEN;
+  const url = env("KV_REST_API_URL", "UPSTASH_REDIS_REST_URL");
+  const token = env("KV_REST_API_TOKEN", "UPSTASH_REDIS_REST_TOKEN");
   return url && token ? { url, token } : null;
 }
 

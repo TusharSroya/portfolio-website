@@ -1,6 +1,11 @@
 import { NextResponse } from "next/server";
 import { parseFeedback, saveFeedback, storeConfigured } from "@/lib/feedback";
 
+// Status check: is storage connected? Reveals nothing else.
+export async function GET() {
+  return NextResponse.json({ storage: storeConfigured() ? "connected" : "not_connected" });
+}
+
 export async function POST(req: Request) {
   let body: Record<string, unknown>;
   try {
