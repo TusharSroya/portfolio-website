@@ -46,8 +46,8 @@ function env(...suffixes: string[]) {
 }
 
 function creds() {
-  const url = env("KV_REST_API_URL", "UPSTASH_REDIS_REST_URL");
-  const token = env("KV_REST_API_TOKEN", "UPSTASH_REDIS_REST_TOKEN");
+  const url = env("KV_REST_API_URL", "UPSTASH_REDIS_REST_URL", "REST_API_URL", "REDIS_REST_URL");
+  const token = env("KV_REST_API_TOKEN", "UPSTASH_REDIS_REST_TOKEN", "REST_API_TOKEN", "REDIS_REST_TOKEN");
   return url && token ? { url, token } : null;
 }
 
